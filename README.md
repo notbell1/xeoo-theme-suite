@@ -10,7 +10,8 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Versi-1.0.0-f43f5e?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Versi 1.0.0" />
+    <img src="https://img.shields.io/badge/Versi-2.0.0-f43f5e?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Versi 2.0.0" />
+    <img src="https://img.shields.io/badge/Publisher-NTTBELL-10b981?style=for-the-badge&logo=github&logoColor=white" alt="Publisher NTTBELL" />
     <img src="https://img.shields.io/badge/Warna-15%20Kategori-a855f7?style=for-the-badge&logo=artstation&logoColor=white" alt="15 Kategori" />
     <img src="https://img.shields.io/badge/Total%20Tema-43%20Pilihan-00f5ff?style=for-the-badge&logo=palette&logoColor=white" alt="43 Tema" />
     <img src="https://img.shields.io/badge/Kontras-WCAG%20AA%20Compliant-22c55e?style=for-the-badge&logo=checkmarx&logoColor=white" alt="WCAG AA" />
@@ -49,7 +50,7 @@ Bagi Anda yang mungkin ragu memasang ekstensi lokal di luar Marketplace, berikut
 | 🌐 **Zero Network & No Telemetry** | 🟢 **Offline Murni** | Ekstensi ini **tidak memiliki akses internet sama sekali**. Tidak ada perintah `fetch`, `http`, `axios`, atau tracking telemetri. Kode Anda tidak akan pernah dikirim ke server mana pun (aman untuk lingkungan kerja *air-gapped*). |
 | 📄 **Tanpa File Biner / Eksekusi** | 🟢 **Pure Plaintext** | Tidak ada file `.exe`, `.dll`, `.bat`, atau skrip biner tersembunyi. 100% isi berkas adalah format JSON warna standar dan skrip JavaScript resmi VS Code API. |
 | 🔒 **Akses Terisolasi (Sandboxed)** | 🟢 **Non-Intrusive** | Skrip ekstensi hanya menjalankan fungsi pengubah palet warna bawaan (`vscode.workspace.getConfiguration('workbench').update`). Ekstensi **tidak memiliki izin** untuk membaca, mengedit, atau menghapus file proyek maupun sistem Anda. |
-| 🔍 **Transparansi Berkas `.vsix`** | 🟢 **Bisa Diaudit Sendiri** | Berkas installer `.vsix` sebenarnya adalah arsip ZIP standar. Anda dapat mengganti nama `xeoo-theme-1.0.0.vsix` menjadi `xeoo-theme-1.0.0.zip` lalu mengekstraknya menggunakan WinRAR/7-Zip untuk memeriksa langsung setiap baris kode di dalamnya. |
+| 🔍 **Transparansi Berkas `.vsix`** | 🟢 **Bisa Diaudit Sendiri** | Berkas installer `.vsix` sebenarnya adalah arsip ZIP standar. Anda dapat mengganti nama `xeoo-theme-2.0.0.vsix` menjadi `xeoo-theme-2.0.0.zip` lalu mengekstraknya menggunakan WinRAR/7-Zip untuk memeriksa langsung setiap baris kode di dalamnya. |
 
 ---
 
@@ -74,12 +75,12 @@ Bagi Anda yang mungkin ragu memasang ekstensi lokal di luar Marketplace, berikut
 2. Masuk ke panel ekstensi dengan menekan **`Ctrl + Shift + X`** (atau **`Cmd + Shift + X`** di Mac).
 3. Di sudut kanan atas panel Extensions, klik ikon **titik tiga (`...`)** (*Views and More Actions*).
 4. Pilih **`Install from VSIX...`**.
-5. Pilih berkas **`xeoo-theme-1.0.0.vsix`** yang berada di dalam folder proyek ini, lalu klik **Install**.
+5. Pilih berkas **`xeoo-theme-2.0.0.vsix`** yang berada di dalam folder proyek ini, lalu klik **Install**.
 6. **Selesai! 🎉** Ikon Xeoo Studio akan langsung muncul di bilah sisi kiri (*Activity Bar*).
 
 > 💡 **Instal Cepat via Terminal:**
 > ```bash
-> code --install-extension xeoo-theme-1.0.0.vsix
+> code --install-extension xeoo-theme-2.0.0.vsix
 > ```
 
 </details>
@@ -298,6 +299,91 @@ Setiap kategori dirancang dengan 3 varian:
 | **Xeoo Teal Light** | Light | Shallow Reef Paper | `#0f766e` | `#0d9488` | Kertas terumbu karang dangkal dengan tinta toska pekat. |
 
 </details>
+
+---
+
+## ⚙️ Arsitektur Teknis Ekstensi (Technical Architecture Deep-Dive)
+
+Bagi pengembang yang ingin memahami atau mengembangkan arsitektur ekstensi ini, berikut adalah penjelasan mendalam tentang implementasi fitur teknis di VS Code:
+
+### 1. ⚡ Activation Events (`activationEvents`)
+```json
+"activationEvents": [
+  "onStartupFinished"
+]
+```
+* **Fungsi**: Menentukan kondisi saat runtime Node.js mengeksekusi fungsi `activate()` di berkas [src/extension.js](file:///c:/laragon/www/PROJECT_GIT/Extension%20VSCode/coding-theme-extension/zx-theme/src/extension.js).
+* **Kenapa menggunakan `onStartupFinished`?**:
+  Banyak ekstensi lambat karena aktif saat VS Code pertama kali dinyalakan (`*`). Dengan `onStartupFinished`, proses inisialisasi Xeoo Theme ditunda sampai antarmuka utama VS Code selesai dimuat. Hasilnya: **kecepatan buka VS Code tetap 0 ms tanpa lag**.
+
+---
+
+### 2. 🎮 Commands (`contributes.commands`)
+Mendaftarkan instruksi yang dapat dijalankan melalui Command Palette (`Ctrl+Shift+P`), shortcut keyboard, atau interaksi menu klik:
+
+* **`xeoo-theme.applyTheme`**:
+  * **Cara Kerja**: Menerima parameter nama tema (`themeName`), lalu memanggil API resmi VS Code:
+    ```javascript
+    await vscode.workspace.getConfiguration('workbench').update('colorTheme', themeName, vscode.ConfigurationTarget.Global);
+    ```
+  * **Feedback**: Menampilkan pesan interaktif mewah di pojok kanan bawah dengan tombol pintasan palet.
+* **`xeoo-theme.quickPick`**:
+  * **Cara Kerja**: Menampilkan jendela pencarian cepat palet (*QuickPick Modal*) menggunakan `vscode.window.showQuickPick()`. Pengguna dapat mengetik kata kunci nama warna (misal: "blue", "paper", "rose") dan melihat pratinjau tema secara instan.
+* **`xeoo-theme.randomTheme`**:
+  * **Cara Kerja**: Menjalankan algoritma acak (*random picker*) di antara 43 palet warna terdaftar untuk memberikan variasi suasana koding baru.
+
+---
+
+### 3. 🎨 Themes (`contributes.themes`)
+Bagian ini mendaftarkan 43 tema ke dalam kernel warna VS Code:
+```json
+{
+  "label": "Xeoo Red Dark",
+  "uiTheme": "vs-dark",
+  "path": "./themes/xeoo-red-dark-color-theme.json"
+}
+```
+* **`label`**: Nama resmi yang muncul di pemilih tema VS Code (`Ctrl+K Ctrl+T`).
+* **`uiTheme`**: Menentukan mode dasar editor:
+  * `"vs-dark"` untuk varian **Dark** dan **Soft**.
+  * `"vs"` untuk varian **Light (Paper/Anti-Glare)**.
+* **`path`**: Jalur relatif ke file JSON yang berisi token warna UI workbench (`colors`), aturan sintaks TextMate (`tokenColors`), dan token LSP semantik (`semanticTokenColors`).
+
+---
+
+### 4. 🗂️ View Containers (`contributes.viewsContainers.activitybar`)
+```json
+"viewsContainers": {
+  "activitybar": [
+    {
+      "id": "xeoo-theme-sidebar",
+      "title": "Xeoo Theme",
+      "icon": "assets/activitybar-icon.svg"
+    }
+  ]
+}
+```
+* **Fungsi**: Membuat wadah (*container*) tab baru pada bilah sisi paling kiri (**Activity Bar**).
+* **Cara Kerja**: Dengan mendaftarkan ID `xeoo-theme-sidebar` dan mengikatnya ke ikon vektor monokrom `assets/activitybar-icon.svg`, VS Code otomatis merender tab navigasi baru sejajar dengan ikon File Explorer, Search, dan Source Control.
+
+---
+
+### 5. 🌳 Views (`contributes.views`)
+```json
+"views": {
+  "xeoo-theme-sidebar": [
+    {
+      "id": "xeoo-theme-switcher",
+      "name": "Theme Switcher"
+    }
+  ]
+}
+```
+* **Fungsi**: Menampilkan panel tampilan di dalam tab *View Container* yang sudah dibuat.
+* **Integrasi dengan `vscode.TreeDataProvider`**:
+  * Di dalam `src/extension.js`, view dengan ID `xeoo-theme-switcher` dihubungkan ke kelas `XeooStudioTreeDataProvider`.
+  * Pohon navigasi dipecah menjadi 2 tingkat: **Root Level** (15 Kategori Warna) dan **Children Level** (Varian tema di dalam kategori).
+  * **Event Listener Dinamis**: Ekstensi memasang `vscode.workspace.onDidChangeConfiguration`. Saat tema diganti di mana pun, tree view otomatis menembakkan event `_onDidChangeTreeData.fire()` untuk memindahkan lencana `✦ CURRENT ACTIVE` ke tema yang baru terpilih.
 
 ---
 

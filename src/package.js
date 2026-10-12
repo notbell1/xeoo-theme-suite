@@ -9,6 +9,13 @@ const { execSync } = require('child_process');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const pkg = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'package.json'), 'utf8'));
+// Clean up old vsix files in ROOT_DIR
+fs.readdirSync(ROOT_DIR).forEach((file) => {
+  if (file.endsWith('.vsix')) {
+    fs.unlinkSync(path.join(ROOT_DIR, file));
+  }
+});
+
 const vsixName = `${pkg.name}-${pkg.version}.vsix`;
 const vsixOutput = path.join(ROOT_DIR, vsixName);
 
