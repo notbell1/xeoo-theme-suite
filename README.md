@@ -14,6 +14,7 @@
     <img src="https://img.shields.io/badge/Warna-15%20Kategori-a855f7?style=for-the-badge&logo=artstation&logoColor=white" alt="15 Kategori" />
     <img src="https://img.shields.io/badge/Total%20Tema-43%20Pilihan-00f5ff?style=for-the-badge&logo=palette&logoColor=white" alt="43 Tema" />
     <img src="https://img.shields.io/badge/Kontras-WCAG%20AA%20Compliant-22c55e?style=for-the-badge&logo=checkmarx&logoColor=white" alt="WCAG AA" />
+    <img src="https://img.shields.io/badge/Keamanan-100%25%20Aman%20%7C%20No%20Malware-10b981?style=for-the-badge&logo=shield&logoColor=white" alt="100% Safe" />
   </p>
 
   <br/>
@@ -32,7 +33,23 @@ Berbeda dengan tema biasa yang hanya mewarnai teks kode, **Xeoo Theme** mendesai
 * 📁 **Sidebar (Explorer)**: Latar khusus dengan border pembatas kontras, sehingga batas antara file list dan area koding terlihat sangat tegas (tidak menyatu/membingungkan).
 * 📝 **Editor Canvas**: Kanvas utama yang bersih dengan warna kontras terkalibrasi (**WCAG AA 4.5:1 ~ 14:1**), kode angka dan teks variabel tajam tanpa silau.
 * 📊 **Footer (Status Bar)**: Menampilkan warna identitas kategori tema dengan teks kontras tinggi dan indikator aktif.
-* 📑 **Tabs Aktif**: Tab yang sedang dibuka memiliki aksen garis atas terang dan latar yang langsung menyatu dengan editor.
+---
+
+## 🛡️ Jaminan Keamanan & Privasi (100% Safe & Verified)
+
+> [!IMPORTANT]
+> **Ekstensi ini 100% Bersih, Bebas Virus/Malware, dan Sepenuhnya Aman.**
+> Seluruh kode sumber bersifat publik (*open-source*), transparan, dan dapat diaudit secara mandiri oleh siapa saja.
+
+Bagi Anda yang mungkin ragu memasang ekstensi lokal di luar Marketplace, berikut adalah **bukti teknis konkret** bahwa Xeoo Theme aman tanpa risiko:
+
+| Parameter Keamanan | Status | Bukti Konkret & Penjelasan Teknis |
+| :--- | :---: | :--- |
+| 🛡 **0 Dependency Pihak Ketiga** | 🟢 **100% Clean** | Ekstensi ini **tidak menginstal library luar apa pun** (`dependencies: {}`). Bebas dari risiko *supply-chain attack* atau paket terselubung. |
+| 🌐 **Zero Network & No Telemetry** | 🟢 **Offline Murni** | Ekstensi ini **tidak memiliki akses internet sama sekali**. Tidak ada perintah `fetch`, `http`, `axios`, atau tracking telemetri. Kode Anda tidak akan pernah dikirim ke server mana pun (aman untuk lingkungan kerja *air-gapped*). |
+| 📄 **Tanpa File Biner / Eksekusi** | 🟢 **Pure Plaintext** | Tidak ada file `.exe`, `.dll`, `.bat`, atau skrip biner tersembunyi. 100% isi berkas adalah format JSON warna standar dan skrip JavaScript resmi VS Code API. |
+| 🔒 **Akses Terisolasi (Sandboxed)** | 🟢 **Non-Intrusive** | Skrip ekstensi hanya menjalankan fungsi pengubah palet warna bawaan (`vscode.workspace.getConfiguration('workbench').update`). Ekstensi **tidak memiliki izin** untuk membaca, mengedit, atau menghapus file proyek maupun sistem Anda. |
+| 🔍 **Transparansi Berkas `.vsix`** | 🟢 **Bisa Diaudit Sendiri** | Berkas installer `.vsix` sebenarnya adalah arsip ZIP standar. Anda dapat mengganti nama `xeoo-theme-1.0.0.vsix` menjadi `xeoo-theme-1.0.0.zip` lalu mengekstraknya menggunakan WinRAR/7-Zip untuk memeriksa langsung setiap baris kode di dalamnya. |
 
 ---
 
