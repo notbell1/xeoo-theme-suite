@@ -303,7 +303,7 @@ Setiap kategori dirancang dengan 3 varian:
 
 <div align="center">
 
-  <p>Dikembangkan dengan ❤️ dan dedikasi estetika tingkat tinggi oleh <strong>ZXMARCHIA</strong>.</p>
+  <p>Dikembangkan dengan ❤️ dan dedikasi estetika tingkat tinggi oleh <strong>NTTBELL</strong>.</p>
   <p>Dilisensikan di bawah <a href="LICENSE">MIT License</a>.</p>
 
   <p><em>Koding lebih menyenangkan, mata tetap nyaman dengan <strong>Xeoo Theme Suite</strong>! 🚀</em></p>
