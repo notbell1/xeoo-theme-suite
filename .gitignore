@@ -1,3 +1,15 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Package builds & staging
 *.vsix
+.vsix_stage/
+
+# Testing & Logs
+.vscode-test/
+*.log
+
+# Environment & OS files
 .env
+.DS_Store
+Thumbs.db

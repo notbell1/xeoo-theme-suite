@@ -1,22 +1,222 @@
 {
-  "name": "zx-theme",
-  "displayName": "ZX Theme",
-  "description": "A professional dark theme with fresh deep red accents.",
-  "version": "0.0.1",
+  "name": "xeoo-theme",
+  "displayName": "Xeoo Theme",
+  "description": "A master suite of 26 professionally calibrated Dark & Light themes with an interactive sidebar switcher. Designed for zero eye-strain and WCAG-compliant contrast.",
+  "version": "1.0.0",
   "publisher": "ZXMARCHIA",
+  "icon": "assets/xeoo-icon.png",
   "license": "MIT",
   "engines": {
     "vscode": "^1.90.0"
   },
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "paper",
+    "crimson",
+    "ruby",
+    "cyberpunk",
+    "contrast",
+    "php",
+    "laravel",
+    "javascript",
+    "typescript",
+    "luau"
+  ],
+  "scripts": {
+    "build": "node src/build.js",
+    "watch": "node src/build.js --watch",
+    "package": "node src/package.js"
+  },
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "xeoo-theme-sidebar",
+          "title": "Xeoo Theme",
+          "icon": "assets/activitybar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "xeoo-theme-sidebar": [
+        {
+          "id": "xeoo-theme-switcher",
+          "name": "Theme Switcher"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "xeoo-theme.applyTheme",
+        "title": "Apply Theme",
+        "category": "Xeoo Theme"
+      },
+      {
+        "command": "xeoo-theme.quickPick",
+        "title": "Quick Pick Theme Palette",
+        "category": "Xeoo Theme",
+        "icon": "$(paintcan)"
+      },
+      {
+        "command": "xeoo-theme.randomTheme",
+        "title": "Surprise Me! (Random Theme)",
+        "category": "Xeoo Theme",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "xeoo-theme.quickPick",
+          "when": "view == xeoo-theme-switcher",
+          "group": "navigation"
+        },
+        {
+          "command": "xeoo-theme.randomTheme",
+          "when": "view == xeoo-theme-switcher",
+          "group": "navigation"
+        }
+      ]
+    },
     "themes": [
       {
-        "label": "ZX Theme",
+        "label": "Xeoo Crimson Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/zx-theme-color-theme.json"
+        "path": "./themes/xeoo-crimson-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Midnight Ruby",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-midnight-ruby-color-theme.json"
+      },
+      {
+        "label": "Xeoo Blood Orange",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-blood-orange-color-theme.json"
+      },
+      {
+        "label": "Xeoo Rose Pine Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-rose-pine-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cyber Neon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-cyber-neon-color-theme.json"
+      },
+      {
+        "label": "Xeoo Synthwave 80s",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-synthwave-80s-color-theme.json"
+      },
+      {
+        "label": "Xeoo Matrix Green",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-matrix-green-color-theme.json"
+      },
+      {
+        "label": "Xeoo Electric Amethyst",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-electric-amethyst-color-theme.json"
+      },
+      {
+        "label": "Xeoo Deep Abyss",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-deep-abyss-color-theme.json"
+      },
+      {
+        "label": "Xeoo Aqua Marine",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-aqua-marine-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cobalt Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-cobalt-night-color-theme.json"
+      },
+      {
+        "label": "Xeoo Nordic Frost",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-nordic-frost-color-theme.json"
+      },
+      {
+        "label": "Xeoo Emerald Forest",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-emerald-forest-color-theme.json"
+      },
+      {
+        "label": "Xeoo Matcha Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-matcha-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Espresso Roast",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-espresso-roast-color-theme.json"
+      },
+      {
+        "label": "Xeoo Autumn Amber",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-autumn-amber-color-theme.json"
+      },
+      {
+        "label": "Xeoo Slate Carbon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-slate-carbon-color-theme.json"
+      },
+      {
+        "label": "Xeoo Titanium Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-titanium-grey-color-theme.json"
+      },
+      {
+        "label": "Xeoo Dracula Shade",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-dracula-shade-color-theme.json"
+      },
+      {
+        "label": "Xeoo Crimson Carbon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-crimson-carbon-color-theme.json"
+      },
+      {
+        "label": "Xeoo Paper White",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-paper-white-color-theme.json"
+      },
+      {
+        "label": "Xeoo Sakura Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-sakura-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Nord Snow",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-nord-snow-color-theme.json"
+      },
+      {
+        "label": "Xeoo Matcha Latte Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-matcha-latte-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Sepia Vintage",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-sepia-vintage-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cyber Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-cyber-light-color-theme.json"
       }
     ]
   },
