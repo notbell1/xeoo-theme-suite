@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/xeoo-logo.png" alt="Xeoo Theme Suite Logo" width="100%" style="max-width: 820px; border-radius: 20px;" />
+  <img src="assets/xeoo-icon.png" alt="Xeoo Theme Suite Logo" width="100%" style="max-width: 820px; border-radius: 20px;" />
 
 <br/><br/>
 
