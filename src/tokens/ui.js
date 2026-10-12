@@ -1,26 +1,31 @@
 /**
  * Xeoo Theme Suite - Universal Workbench UI Generator
- * Generates 180+ workbench tokens dynamically for both Dark and Light variants.
+ * Generates 180+ tokens with unmistakable visual distinction between:
+ * - Header (Title Bar)
+ * - Sidebar (File Explorer / Primary Side Bar)
+ * - Editor Canvas (Main Workspace)
+ * - Footer (Status Bar with signature theme color)
+ * - Tabs & Floating Overlays
  */
 
 function generateWorkbenchColors(themeConfig) {
-  const { neutral, accent, syntax, type = 'dark' } = themeConfig;
+  const { neutral, footer, accent, syntax, type = 'dark' } = themeConfig;
   const isLight = type === 'light';
 
-  // Terminal ANSI Colors derived from theme palette
+  // Derived ANSI colors for integrated terminal
   const terminal = {
-    black: isLight ? '#0f172a' : neutral.bgDarker,
+    black: isLight ? '#0f172a' : neutral.bgHeader,
     red: syntax.keyword || accent.primary,
-    green: syntax.string,
-    yellow: syntax.number || '#eab308',
-    blue: syntax.func,
+    green: syntax.string || '#10b981',
+    yellow: syntax.number || '#f59e0b',
+    blue: syntax.func || '#3b82f6',
     magenta: syntax.parameter || accent.primary,
     cyan: syntax.operator || '#06b6d4',
     white: isLight ? '#f8fafc' : neutral.fgBright,
     brightBlack: neutral.fgMuted,
     brightRed: accent.hover || syntax.keyword,
-    brightGreen: syntax.string,
-    brightYellow: syntax.type || '#fde047',
+    brightGreen: syntax.string || '#34d399',
+    brightYellow: syntax.type || '#facc15',
     brightBlue: syntax.method || syntax.func,
     brightMagenta: accent.primary,
     brightCyan: syntax.operator,
@@ -49,43 +54,43 @@ function generateWorkbenchColors(themeConfig) {
     'descriptionForeground': neutral.fgMuted,
     'errorForeground': status.error,
     'selection.background': accent.selection,
-    'widget.shadow': isLight ? '#00000018' : '#00000066',
+    'widget.shadow': isLight ? '#00000015' : '#00000077',
     'sash.hoverBorder': accent.primary,
 
     // -------------------------------------------------------------
-    // Window & Title Bar
+    // 1. HEADER (Title Bar) - Anchoring Top Level
     // -------------------------------------------------------------
-    'titleBar.activeBackground': neutral.bgDarker,
+    'titleBar.activeBackground': neutral.bgHeader,
     'titleBar.activeForeground': neutral.fgBright,
-    'titleBar.inactiveBackground': neutral.bgDarker,
+    'titleBar.inactiveBackground': neutral.bgHeader,
     'titleBar.inactiveForeground': neutral.fgMuted,
     'titleBar.border': neutral.borderSubtle,
 
     // -------------------------------------------------------------
-    // Activity Bar
+    // 2. ACTIVITY BAR - Accent Hub
     // -------------------------------------------------------------
-    'activityBar.background': neutral.bgDarker,
+    'activityBar.background': neutral.bgHeader,
     'activityBar.foreground': accent.primary,
     'activityBar.inactiveForeground': neutral.fgMuted,
     'activityBar.border': neutral.borderSubtle,
     'activityBarBadge.background': accent.primary,
     'activityBarBadge.foreground': '#ffffff',
     'activityBar.activeBorder': accent.primary,
-    'activityBar.activeBackground': `${accent.primary}12`,
+    'activityBar.activeBackground': `${accent.primary}18`,
 
     // -------------------------------------------------------------
-    // Side Bar
+    // 3. SIDEBAR - Distinct Tone from Editor & Titlebar
     // -------------------------------------------------------------
-    'sideBar.background': neutral.bgDarker,
+    'sideBar.background': neutral.bgSidebar,
     'sideBar.foreground': neutral.fgDefault,
     'sideBar.border': neutral.borderSubtle,
     'sideBarTitle.foreground': neutral.fgBright,
-    'sideBarSectionHeader.background': neutral.bgBase,
+    'sideBarSectionHeader.background': neutral.bgHeader,
     'sideBarSectionHeader.foreground': neutral.fgBright,
     'sideBarSectionHeader.border': neutral.borderSubtle,
 
     // -------------------------------------------------------------
-    // Editor Workbench
+    // 4. EDITOR CANVAS - The Main Workspace
     // -------------------------------------------------------------
     'editor.background': neutral.bgBase,
     'editor.foreground': neutral.fgDefault,
@@ -94,14 +99,14 @@ function generateWorkbenchColors(themeConfig) {
     'editorCursor.foreground': accent.primary,
     'editor.selectionBackground': accent.selection,
     'editor.selectionHighlightBackground': `${accent.primary}25`,
-    'editor.inactiveSelectionBackground': `${accent.selection}88`,
+    'editor.inactiveSelectionBackground': `${accent.selection}77`,
     'editor.wordHighlightBackground': `${accent.primary}20`,
     'editor.wordHighlightStrongBackground': `${accent.primary}35`,
     'editor.findMatchBackground': `${accent.primary}66`,
     'editor.findMatchHighlightBackground': `${accent.primary}30`,
     'editor.findRangeHighlightBackground': `${neutral.bgHighlight}66`,
     'editor.hoverHighlightBackground': `${accent.primary}18`,
-    'editor.lineHighlightBackground': isLight ? `${neutral.bgHighlight}99` : `${neutral.bgHighlight}88`,
+    'editor.lineHighlightBackground': neutral.bgHighlight,
     'editor.lineHighlightBorder': '#00000000',
     'editorLink.activeForeground': accent.hover || accent.primary,
     'editorWhitespace.foreground': `${neutral.fgMuted}33`,
@@ -109,7 +114,7 @@ function generateWorkbenchColors(themeConfig) {
     'editorIndentGuide.activeBackground1': accent.primary,
     'editorRuler.foreground': neutral.borderSubtle,
     'editorCodeLens.foreground': neutral.fgMuted,
-    'editorBracketMatch.background': `${accent.primary}20`,
+    'editorBracketMatch.background': `${accent.primary}22`,
     'editorBracketMatch.border': accent.primary,
 
     // Bracket Pair Rainbow Highlights
@@ -121,16 +126,16 @@ function generateWorkbenchColors(themeConfig) {
     'editorBracketHighlight.foreground6': syntax.operator || '#38bdf8',
 
     // -------------------------------------------------------------
-    // Editor Tabs & Groups
+    // 5. TABS & EDITOR GROUPS - Clear Tab Separation
     // -------------------------------------------------------------
-    'editorGroupHeader.tabsBackground': neutral.bgDarker,
+    'editorGroupHeader.tabsBackground': neutral.bgHeader,
     'editorGroupHeader.tabsBorder': neutral.borderSubtle,
     'editorGroup.border': neutral.borderSubtle,
     'tab.activeBackground': neutral.bgBase,
     'tab.activeForeground': neutral.fgBright,
     'tab.activeBorder': '#00000000',
     'tab.activeBorderTop': accent.primary,
-    'tab.inactiveBackground': neutral.bgDarker,
+    'tab.inactiveBackground': neutral.bgHeader,
     'tab.inactiveForeground': neutral.fgMuted,
     'tab.border': neutral.borderSubtle,
     'tab.hoverBackground': neutral.bgHighlight,
@@ -139,7 +144,22 @@ function generateWorkbenchColors(themeConfig) {
     'tab.unfocusedInactiveForeground': `${neutral.fgMuted}aa`,
 
     // -------------------------------------------------------------
-    // Breadcrumbs
+    // 6. FOOTER (Status Bar) - Unmistakable Theme Identity
+    // -------------------------------------------------------------
+    'statusBar.background': footer.bg,
+    'statusBar.foreground': footer.fg,
+    'statusBar.border': neutral.borderSubtle,
+    'statusBar.debuggingBackground': '#7c2d12',
+    'statusBar.debuggingForeground': '#ffffff',
+    'statusBar.noFolderBackground': footer.bg,
+    'statusBarItem.hoverBackground': '#ffffff25',
+    'statusBarItem.activeBackground': '#ffffff35',
+    'statusBarItem.remoteBackground': accent.primary,
+    'statusBarItem.remoteForeground': '#ffffff',
+    'statusBarItem.prominentBackground': '#00000033',
+
+    // -------------------------------------------------------------
+    // 7. BREADCRUMBS
     // -------------------------------------------------------------
     'breadcrumb.background': neutral.bgBase,
     'breadcrumb.foreground': neutral.fgMuted,
@@ -148,22 +168,22 @@ function generateWorkbenchColors(themeConfig) {
     'breadcrumbPicker.background': neutral.bgElevated,
 
     // -------------------------------------------------------------
-    // Lists & Trees
+    // 8. LISTS & TREES (File Tree, Explorer, Quick Open)
     // -------------------------------------------------------------
-    'list.activeSelectionBackground': isLight ? `${accent.primary}28` : `${accent.primary}44`,
+    'list.activeSelectionBackground': isLight ? `${accent.primary}25` : `${accent.primary}40`,
     'list.activeSelectionForeground': isLight ? neutral.fgBright : '#ffffff',
-    'list.inactiveSelectionBackground': isLight ? `${accent.primary}18` : `${accent.primary}25`,
+    'list.inactiveSelectionBackground': isLight ? `${accent.primary}15` : `${accent.primary}22`,
     'list.inactiveSelectionForeground': neutral.fgBright,
     'list.hoverBackground': neutral.bgHighlight,
     'list.hoverForeground': neutral.fgBright,
-    'list.focusBackground': isLight ? `${accent.primary}22` : `${accent.primary}33`,
+    'list.focusBackground': isLight ? `${accent.primary}20` : `${accent.primary}30`,
     'list.focusForeground': neutral.fgBright,
     'list.highlightForeground': accent.primary,
     'list.dropBackground': `${accent.primary}33`,
     'tree.indentGuidesStroke': neutral.borderSubtle,
 
     // -------------------------------------------------------------
-    // Inputs, Dropdowns & Buttons
+    // 9. INPUTS, DROPDOWNS & BUTTONS
     // -------------------------------------------------------------
     'input.background': neutral.bgElevated,
     'input.foreground': neutral.fgBright,
@@ -185,43 +205,25 @@ function generateWorkbenchColors(themeConfig) {
     'button.background': accent.primary,
     'button.foreground': '#ffffff',
     'button.hoverBackground': accent.hover || accent.primary,
-    'button.secondaryBackground': neutral.bgActive,
+    'button.secondaryBackground': neutral.bgElevated,
     'button.secondaryForeground': neutral.fgBright,
     'button.secondaryHoverBackground': neutral.bgHighlight,
 
     // -------------------------------------------------------------
-    // Status Bar
-    // -------------------------------------------------------------
-    'statusBar.background': neutral.bgDarker,
-    'statusBar.foreground': neutral.fgSecondary,
-    'statusBar.border': neutral.borderSubtle,
-    'statusBar.debuggingBackground': '#7c2d12',
-    'statusBar.debuggingForeground': '#ffffff',
-    'statusBar.noFolderBackground': neutral.bgDarker,
-    'statusBarItem.hoverBackground': `${accent.primary}22`,
-    'statusBarItem.activeBackground': `${accent.primary}33`,
-    'statusBarItem.remoteBackground': accent.primary,
-    'statusBarItem.remoteForeground': '#ffffff',
-    'statusBarItem.prominentBackground': accent.primary,
-
-    // -------------------------------------------------------------
-    // Badges & Progress
+    // 10. BADGES & PROGRESS
     // -------------------------------------------------------------
     'badge.background': accent.primary,
     'badge.foreground': '#ffffff',
     'progressBar.background': accent.primary,
 
     // -------------------------------------------------------------
-    // Command Palette & Quick Pick
+    // 11. COMMAND PALETTE & NOTIFICATIONS
     // -------------------------------------------------------------
     'quickInput.background': neutral.bgElevated,
     'quickInput.foreground': neutral.fgBright,
     'pickerGroup.border': neutral.borderSubtle,
     'pickerGroup.foreground': accent.primary,
 
-    // -------------------------------------------------------------
-    // Notifications & Peek View
-    // -------------------------------------------------------------
     'notificationCenterHeader.background': neutral.bgElevated,
     'notificationCenterHeader.foreground': neutral.fgBright,
     'notifications.background': neutral.bgElevated,
@@ -230,8 +232,8 @@ function generateWorkbenchColors(themeConfig) {
     'notificationToast.border': accent.primary,
 
     'peekView.border': accent.primary,
-    'peekViewEditor.background': neutral.bgDarker,
-    'peekViewEditorGutter.background': neutral.bgDarker,
+    'peekViewEditor.background': neutral.bgSidebar,
+    'peekViewEditorGutter.background': neutral.bgSidebar,
     'peekViewResult.background': neutral.bgElevated,
     'peekViewResult.fileForeground': neutral.fgBright,
     'peekViewResult.lineForeground': neutral.fgMuted,
@@ -239,7 +241,7 @@ function generateWorkbenchColors(themeConfig) {
     'peekViewResult.selectionBackground': `${accent.primary}33`,
 
     // -------------------------------------------------------------
-    // Git & Version Control Decorations
+    // 12. GIT & VERSION CONTROL
     // -------------------------------------------------------------
     'gitDecoration.addedResourceForeground': status.gitAdded,
     'gitDecoration.modifiedResourceForeground': status.gitModified,
@@ -257,7 +259,7 @@ function generateWorkbenchColors(themeConfig) {
     'diffEditor.removedTextBackground': `${status.gitDeleted}22`,
 
     // -------------------------------------------------------------
-    // Scrollbar & Minimap
+    // 13. SCROLLBAR & MINIMAP
     // -------------------------------------------------------------
     'scrollbar.shadow': isLight ? '#00000010' : '#00000044',
     'scrollbarSlider.background': `${neutral.fgMuted}22`,
@@ -270,7 +272,7 @@ function generateWorkbenchColors(themeConfig) {
     'minimapGutter.deletedBackground': status.gitDeleted,
 
     // -------------------------------------------------------------
-    // Integrated Terminal
+    // 14. INTEGRATED TERMINAL
     // -------------------------------------------------------------
     'terminal.background': neutral.bgBase,
     'terminal.foreground': neutral.fgDefault,

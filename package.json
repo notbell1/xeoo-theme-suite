@@ -89,134 +89,219 @@
     },
     "themes": [
       {
-        "label": "Xeoo Crimson Dark",
+        "label": "Xeoo Red Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-crimson-dark-color-theme.json"
+        "path": "./themes/xeoo-red-dark-color-theme.json"
       },
       {
-        "label": "Xeoo Midnight Ruby",
+        "label": "Xeoo Red Soft",
         "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-midnight-ruby-color-theme.json"
+        "path": "./themes/xeoo-red-soft-color-theme.json"
       },
       {
-        "label": "Xeoo Blood Orange",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-blood-orange-color-theme.json"
-      },
-      {
-        "label": "Xeoo Rose Pine Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-rose-pine-dark-color-theme.json"
-      },
-      {
-        "label": "Xeoo Cyber Neon",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-cyber-neon-color-theme.json"
-      },
-      {
-        "label": "Xeoo Synthwave 80s",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-synthwave-80s-color-theme.json"
-      },
-      {
-        "label": "Xeoo Matrix Green",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-matrix-green-color-theme.json"
-      },
-      {
-        "label": "Xeoo Electric Amethyst",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-electric-amethyst-color-theme.json"
-      },
-      {
-        "label": "Xeoo Deep Abyss",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-deep-abyss-color-theme.json"
-      },
-      {
-        "label": "Xeoo Aqua Marine",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-aqua-marine-color-theme.json"
-      },
-      {
-        "label": "Xeoo Cobalt Night",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-cobalt-night-color-theme.json"
-      },
-      {
-        "label": "Xeoo Nordic Frost",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-nordic-frost-color-theme.json"
-      },
-      {
-        "label": "Xeoo Emerald Forest",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-emerald-forest-color-theme.json"
-      },
-      {
-        "label": "Xeoo Matcha Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-matcha-dark-color-theme.json"
-      },
-      {
-        "label": "Xeoo Espresso Roast",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-espresso-roast-color-theme.json"
-      },
-      {
-        "label": "Xeoo Autumn Amber",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-autumn-amber-color-theme.json"
-      },
-      {
-        "label": "Xeoo Slate Carbon",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-slate-carbon-color-theme.json"
-      },
-      {
-        "label": "Xeoo Titanium Grey",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-titanium-grey-color-theme.json"
-      },
-      {
-        "label": "Xeoo Dracula Shade",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-dracula-shade-color-theme.json"
-      },
-      {
-        "label": "Xeoo Crimson Carbon",
-        "uiTheme": "vs-dark",
-        "path": "./themes/xeoo-crimson-carbon-color-theme.json"
-      },
-      {
-        "label": "Xeoo Paper White",
+        "label": "Xeoo Red Light",
         "uiTheme": "vs",
-        "path": "./themes/xeoo-paper-white-color-theme.json"
+        "path": "./themes/xeoo-red-light-color-theme.json"
       },
       {
-        "label": "Xeoo Sakura Light",
-        "uiTheme": "vs",
-        "path": "./themes/xeoo-sakura-light-color-theme.json"
+        "label": "Xeoo Green Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-green-dark-color-theme.json"
       },
       {
-        "label": "Xeoo Nord Snow",
-        "uiTheme": "vs",
-        "path": "./themes/xeoo-nord-snow-color-theme.json"
+        "label": "Xeoo Green Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-green-soft-color-theme.json"
       },
       {
-        "label": "Xeoo Matcha Latte Light",
+        "label": "Xeoo Green Light",
         "uiTheme": "vs",
-        "path": "./themes/xeoo-matcha-latte-light-color-theme.json"
+        "path": "./themes/xeoo-green-light-color-theme.json"
       },
       {
-        "label": "Xeoo Sepia Vintage",
-        "uiTheme": "vs",
-        "path": "./themes/xeoo-sepia-vintage-color-theme.json"
+        "label": "Xeoo Blue Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-blue-dark-color-theme.json"
       },
       {
-        "label": "Xeoo Cyber Light",
+        "label": "Xeoo Blue Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-blue-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Blue Light",
         "uiTheme": "vs",
-        "path": "./themes/xeoo-cyber-light-color-theme.json"
+        "path": "./themes/xeoo-blue-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Yellow Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-yellow-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Yellow Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-yellow-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Yellow Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-yellow-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Black OLED",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-black-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Black Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-black-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo White Paper",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-white-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo White Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-white-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Purple Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-purple-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Purple Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-purple-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Purple Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-purple-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Orange Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-orange-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Orange Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-orange-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Orange Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-orange-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Pink Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-pink-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Pink Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-pink-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Pink Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-pink-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cyan Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-cyan-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cyan Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-cyan-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Cyan Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-cyan-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gray Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-gray-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gray Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-gray-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gray Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-gray-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Indigo Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-indigo-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Indigo Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-indigo-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Indigo Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-indigo-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Brown Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-brown-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Brown Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-brown-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Brown Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-brown-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gold Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-gold-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gold Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-gold-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Gold Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-gold-light-color-theme.json"
+      },
+      {
+        "label": "Xeoo Teal Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-teal-dark-color-theme.json"
+      },
+      {
+        "label": "Xeoo Teal Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xeoo-teal-soft-color-theme.json"
+      },
+      {
+        "label": "Xeoo Teal Light",
+        "uiTheme": "vs",
+        "path": "./themes/xeoo-teal-light-color-theme.json"
       }
     ]
   },

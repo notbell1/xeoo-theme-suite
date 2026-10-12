@@ -1,21 +1,19 @@
 <div align="center">
 
-  <img src="assets/xeoo-icon.png" alt="Xeoo Theme Suite Logo" width="100%" style="max-width: 820px; border-radius: 20px;" />
-
-<br/><br/>
+  <img src="assets/xeoo-icon.png" alt="Xeoo Theme Icon" width="84" height="84" style="margin-bottom: 6px;" />
 
   <h1>✨ XEOO THEME SUITE ✨</h1>
 
   <p align="center">
-    <strong>Koleksi Master 26 Tema Dark &amp; Light Berkontras Tinggi dengan Studio Sidebar Interaktif di VS Code.</strong><br/>
-    <em>Dirancang secara ilmiah untuk Zero Eye-Strain (Bebas Kelelahan Mata) &bull; Standar WCAG AA (≥4.5:1) &bull; 1-Click Live Theme Switcher</em>
+    <strong>Studio Tema VS Code: 15 Kategori Warna Utama &bull; 43 Variasi (Dark, Soft, Light)</strong><br/>
+    <em>Elevasi UI Penuh (Header, Sidebar, Editor &amp; Footer Berbeda) &bull; Zero Eye-Strain &bull; 1-Click Studio Switcher</em>
   </p>
 
   <p align="center">
     <img src="https://img.shields.io/badge/Versi-1.0.0-f43f5e?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Versi 1.0.0" />
-    <img src="https://img.shields.io/badge/Total%20Tema-26%20Variasi-00f5ff?style=for-the-badge&logo=palette&logoColor=white" alt="26 Tema" />
+    <img src="https://img.shields.io/badge/Warna-15%20Kategori-a855f7?style=for-the-badge&logo=artstation&logoColor=white" alt="15 Kategori" />
+    <img src="https://img.shields.io/badge/Total%20Tema-43%20Pilihan-00f5ff?style=for-the-badge&logo=palette&logoColor=white" alt="43 Tema" />
     <img src="https://img.shields.io/badge/Kontras-WCAG%20AA%20Compliant-22c55e?style=for-the-badge&logo=checkmarx&logoColor=white" alt="WCAG AA" />
-    <img src="https://img.shields.io/badge/Sidebar-Interactive%20Studio-a855f7?style=for-the-badge&logo=speedtest&logoColor=white" alt="Sidebar Studio" />
   </p>
 
   <br/>
@@ -24,47 +22,45 @@
 
 ---
 
-## ⚡ Sekilas Tentang Xeoo Theme
+## ⚡ Apa yang Baru di Versi Ini?
 
-> **"Koding berjam-jam tanpa mata perih, dengan estetika visual kelas atas."**
+> **"Bukan Sekadar Syntax — Seluruh Antarmuka VS Code Ikut Bertransformasi!"**
 
-**Xeoo Theme** diciptakan untuk menyelesaikan masalah klasik programmer: latar gelap yang terlalu kontras dan menusuk mata, teks nomor/variabel yang buram, atau tema terang yang menyilaukan seperti lampu sorot.
+Berbeda dengan tema biasa yang hanya mewarnai teks kode, **Xeoo Theme** mendesain ulang arsitektur visual VS Code secara menyeluruh agar setiap zona antarmuka dapat dibedakan dengan jelas dalam sekali lirik:
 
-- 🎯 **26 Presets Terkalibrasi**: Dari nuansa **Crimson & Ruby** khas Xeoo, **Cyberpunk Neon**, kedalaman **Ocean Abyss**, kehangatan **Espresso**, hingga kertas lembut **Japanese Parchment**.
-- 🖱 **Sidebar Switcher Interaktif**: Tak perlu lagi repot buka setting! Ganti tema langsung dengan sekali klik lewat menu bilah sisi (_Activity Bar_) VS Code.
-- 🛡 **Zero Eye-Strain**: Rasio kontras teruji matematis (**WCAG AA 4.5:1 ~ 14:1**), teks tajam, jernih, dan tidak membuat retina lelah.
+* 🧭 **Header (Title Bar)**: Warna jangkar atas yang teduh dan tegas memisahkan jendela VS Code dari desktop.
+* 📁 **Sidebar (Explorer)**: Latar khusus dengan border pembatas kontras, sehingga batas antara file list dan area koding terlihat sangat tegas (tidak menyatu/membingungkan).
+* 📝 **Editor Canvas**: Kanvas utama yang bersih dengan warna kontras terkalibrasi (**WCAG AA 4.5:1 ~ 14:1**), kode angka dan teks variabel tajam tanpa silau.
+* 📊 **Footer (Status Bar)**: Menampilkan warna identitas kategori tema dengan teks kontras tinggi dan indikator aktif.
+* 📑 **Tabs Aktif**: Tab yang sedang dibuka memiliki aksen garis atas terang dan latar yang langsung menyatu dengan editor.
 
 ---
 
-## 🚀 Panduan Instalasi & Pemasangan Manual
+## 🚀 Panduan Pemasangan Manual (Ekstensi Lokal)
 
 > [!NOTE]
-> Karena ekstensi ini **belum tersedia di Marketplace Resmi VS Code**, Anda dapat memasangnya secara manual dengan sangat mudah menggunakan salah satu metode di bawah ini:
+> Karena ekstensi ini **belum tersedia di Marketplace Resmi VS Code**, Anda dapat memasangnya secara manual menggunakan berkas installer yang sudah tersedia di proyek ini:
 
 <br/>
 
-### 🌟 METODE 1: Pasang Berkas `.vsix` Melalui VS Code (Paling Cepat &amp; Direkomendasikan)
-
-Metode ini adalah cara paling praktis dan resmi untuk mengimpor ekstensi manual ke dalam VS Code Anda.
+### 🌟 CARA 1: Pasang Berkas `.vsix` Melalui VS Code (Paling Cepat)
 
 ```
-[ Buka VS Code ] ➔ [ Extensions (Ctrl+Shift+X) ] ➔ [ Klik "..." di pojok kanan ] ➔ [ Install from VSIX... ]
+[ Buka VS Code ] ➔ [ Extensions (Ctrl+Shift+X) ] ➔ [ Klik "..." di sudut kanan ] ➔ [ Install from VSIX... ]
 ```
 
 <details open>
-<summary><b>👉 Klik untuk melihat panduan langkah demi langkah bergambar</b></summary>
+<summary><b>👉 Klik untuk melihat panduan langkah demi langkah</b></summary>
 <br/>
 
-1. **Buka Visual Studio Code** di komputer Anda.
-2. Buka panel ekstensi dengan menekan shortcut **`Ctrl + Shift + X`** (atau **`Cmd + Shift + X`** di macOS), atau klik ikon kotak-kotak di bilah sisi kiri.
-3. Di sudut kanan atas panel Extensions, klik ikon **titik tiga (`...`)** (_Views and More Actions_).
-4. Pilih opsi **`Install from VSIX...`**.
-5. Cari dan pilih berkas **`xeoo-theme-1.0.0.vsix`** yang ada di folder proyek ini, lalu klik **Install**.
-6. **Selesai! 🎉** Notifikasi akan muncul dan bilah Activity Bar Anda langsung menampilkan ikon Xeoo Theme!
+1. **Buka Visual Studio Code**.
+2. Masuk ke panel ekstensi dengan menekan **`Ctrl + Shift + X`** (atau **`Cmd + Shift + X`** di Mac).
+3. Di sudut kanan atas panel Extensions, klik ikon **titik tiga (`...`)** (*Views and More Actions*).
+4. Pilih **`Install from VSIX...`**.
+5. Pilih berkas **`xeoo-theme-1.0.0.vsix`** yang berada di dalam folder proyek ini, lalu klik **Install**.
+6. **Selesai! 🎉** Ikon Xeoo Studio akan langsung muncul di bilah sisi kiri (*Activity Bar*).
 
-> 💡 **Tips Cepat via Terminal:**
-> Jika Anda menyukai terminal, cukup jalankan perintah satu baris ini:
->
+> 💡 **Instal Cepat via Terminal:**
 > ```bash
 > code --install-extension xeoo-theme-1.0.0.vsix
 > ```
@@ -73,176 +69,232 @@ Metode ini adalah cara paling praktis dan resmi untuk mengimpor ekstensi manual 
 
 <br/>
 
----
-
-### 📂 METODE 2: Salin Folder Ekstensi Secara Manual (Import Folder)
-
-Jika Anda ingin langsung memasang berkas proyek ke direktori ekstensi VS Code Anda:
+### 📂 CARA 2: Salin Folder Ekstensi Secara Manual (Import Folder)
 
 <details>
-<summary><b>👉 Klik untuk melihat jalur direktori sesuai Sistem Operasi Anda</b></summary>
+<summary><b>👉 Klik untuk panduan salin direktori</b></summary>
 <br/>
 
-Cukup salin (_copy_) seluruh folder ekstensi ini dan letakkan ke direktori ekstensi VS Code sesuai sistem operasi Anda:
+Salin seluruh folder ekstensi ini ke direktori ekstensi VS Code di komputer Anda:
 
-- 🪟 **Windows**:
-  ```text
-  %USERPROFILE%\.vscode\extensions\xeoo-theme
-  (Contoh: C:\Users\NamaAnda\.vscode\extensions\xeoo-theme)
-  ```
-- 🍎 **macOS**:
-  ```bash
-  ~/.vscode/extensions/xeoo-theme
-  ```
-- 🐧 **Linux**:
-  ```bash
-  ~/.vscode/extensions/xeoo-theme
-  ```
+* 🪟 **Windows**: `%USERPROFILE%\.vscode\extensions\xeoo-theme`
+* 🍎 **macOS**: `~/.vscode/extensions/xeoo-theme`
+* 🐧 **Linux**: `~/.vscode/extensions/xeoo-theme`
 
-Setelah disalin, **restart VS Code** Anda. Ekstensi Xeoo Theme akan langsung terdeteksi otomatis!
+Setelah disalin, restart VS Code Anda.
 
 </details>
 
 <br/>
 
----
-
-### 🧪 METODE 3: Mode Pengembang / Uji Coba Cepat (Developer Mode)
-
-Ingin langsung mencoba tema tanpa perlu menginstalnya ke sistem utama?
+### 🧪 CARA 3: Mode Pengujian Cepat (Developer F5)
 
 <details>
-<summary><b>👉 Klik untuk panduan Developer Host (Tekan F5)</b></summary>
+<summary><b>👉 Klik untuk panduan Developer Host</b></summary>
 <br/>
 
 1. Buka folder proyek ini di VS Code.
-2. Tekan tombol **`F5`** pada keyboard Anda.
-3. Sebuah jendela baru bernama **`[Extension Development Host]`** akan terbuka dengan ekstensi Xeoo Theme yang langsung berjalan aktif.
-4. Anda bisa langsung mencoba mengubah tema, mengecek sintaksis kode, atau melakukan kustomisasi warna secara _real-time_!
+2. Tekan tombol **`F5`**.
+3. Jendela **Extension Development Host** akan terbuka seketika dengan semua tema yang langsung aktif dan siap dicoba!
 
 </details>
 
-<br/>
+---
+
+## 🎮 Cara Menggunakan Sidebar Xeoo Studio
+
+1. **Buka Studio**: Klik ikon Xeoo di bilah kiri (*Activity Bar*).
+2. **Jelajahi 15 Kategori**: Seluruh 15 warna utama tersusun rapi dengan varian **Dark**, **Soft**, dan **Light**.
+3. **1-Click Apply**: Klik tema yang Anda inginkan, VS Code langsung berganti tema seketika!
+4. **Indikator Aktif**: Tema yang sedang dipakai ditandai dengan lencana **`✦ CURRENT ACTIVE`**.
+5. **Pencarian Cepat**: Tekan ikon palet di atas sidebar untuk fuzzy search semua 43 tema.
+6. **Surprise Me!**: Tekan ikon bintang ✨ di atas sidebar untuk memilihkan tema acak yang keren!
 
 ---
 
-## 🎮 Cara Menggunakan Sidebar Theme Switcher
+## 🎨 Katalog 15 Kategori Warna (43 Tema)
 
-Setelah terpasang, Anda memiliki akses ke **Xeoo Studio** langsung di VS Code:
-
-| Fitur                   | Shortcut / Aksi                                   | Keterangan                                                                  |
-| :---------------------- | :------------------------------------------------ | :-------------------------------------------------------------------------- |
-| **Buka Sidebar**        | Klik ikon **Xeoo** di bilah kiri (_Activity Bar_) | Menampilkan seluruh 26 tema yang dikelompokkan per kategori estetika.       |
-| **Ganti Tema Seketika** | **Klik salah satu tema** di daftar                | Tema editor langsung berganti dalam hitungan milidetik tanpa perlu restart! |
-| **Indikator Aktif**     | Ikon centang **`✓ ACTIVE`**                       | Memberi tahu tema mana yang sedang aktif saat ini.                          |
-| **Quick Palette**       | Klik ikon palet di atas sidebar / `Ctrl+Alt+T`    | Membuka pencarian cepat palet di Command Palette.                           |
-| **Surprise Me!**        | Klik ikon bintang ✨ di atas sidebar              | Memilihkan tema acak yang keren jika Anda ingin suasana baru!               |
-
----
-
-## 🎨 Galeri 26 Variasi Warna Tema
+Setiap kategori dirancang dengan 3 varian:
+* **Dark**: Kontras tinggi, kaya warna, presisi untuk ruangan gelap.
+* **Soft**: Nada pastel dan muted, sangat nyaman untuk mata yang lelah setelah seharian menatap layar.
+* **Light**: Kertas alami anti-silau (*Anti-Glare Paper*) dengan kontras tinta pekat.
 
 <details open>
-<summary><h3>🔴 1. Crimson &amp; Ruby (Karakter Utama Xeoo) — 4 Tema</h3></summary>
+<summary><b>🔴 1. Red (Merah) — Crimson &amp; Ruby</b></summary>
 
-> _Kombinasi obsidian charcoal mewah dengan aksen merah delima dan api yang berani namun tetap ramah di mata._
-
-| Nama Tema               | Tipe | Latar Utama | Aksen Unik             | Karakter Visual                                                                  |
-| :---------------------- | :--- | :---------- | :--------------------- | :------------------------------------------------------------------------------- |
-| **Xeoo Crimson Dark**   | Dark | `#121215`   | Crimson Rose `#f43f5e` | **Flagship**. Obsidian elegan, aksen merah modern, seimbang untuk segala bahasa. |
-| **Xeoo Midnight Ruby**  | Dark | `#08080a`   | Deep Ruby `#e11d48`    | **True OLED Black**. Latar hitam pekat khusus layar OLED dengan kilau delima.    |
-| **Xeoo Blood Orange**   | Dark | `#141113`   | Ember Flame `#f97316`  | Dark umber hangat berpadu bara api oranye dan merah darah.                       |
-| **Xeoo Rose Pine Dark** | Dark | `#191724`   | Muted Rosé `#eb6f92`   | Malam ungu nordik dengan sentuhan rosé pastel yang menenangkan.                  |
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Red Dark** | Dark | Obsidian Crimson | `#be123c` | `#f43f5e` | Flagship crimson modern, berenergi tinggi. |
+| **Xeoo Red Soft** | Soft | Muted Rosé Slate | `#2b1b20` | `#fb7185` | Nuansa merah pastel lembut untuk koding malam hari. |
+| **Xeoo Red Light** | Light | Porcelain White | `#be123c` | `#e11d48` | Kertas putih hangat dengan tinta ruby pekat. |
 
 </details>
 
 <details>
-<summary><h3>⚡ 2. Cyberpunk &amp; Neon Nocturne — 4 Tema</h3></summary>
+<summary><b>🟢 2. Green (Hijau) — Emerald &amp; Sage</b></summary>
 
-> _Estetika retro-futuristik berenergi tinggi untuk pencinta nuansa synthwave dan hacker terminal._
-
-| Nama Tema                  | Tipe | Latar Utama | Aksen Unik                | Karakter Visual                                                          |
-| :------------------------- | :--- | :---------- | :------------------------ | :----------------------------------------------------------------------- |
-| **Xeoo Cyber Neon**        | Dark | `#0d1117`   | Electric Cyan `#00f5ff`   | Navy malam berteknologi tinggi dengan cyan neon dan merah cyber.         |
-| **Xeoo Synthwave 80s**     | Dark | `#1a102f`   | Neon Magenta `#ff007f`    | Deep sunset plum bernuansa arcade 80-an dengan magenta dan kuning senja. |
-| **Xeoo Matrix Green**      | Dark | `#0a0f0d`   | Phosphor Mint `#10b981`   | Terminal obsidian dengan aliran kode hijau digital zamrud jernih.        |
-| **Xeoo Electric Amethyst** | Dark | `#120d1d`   | Electric Violet `#a855f7` | Nuansa royal twilight dengan pendaran ungu violet elektrik.              |
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Green Dark** | Dark | Deep Pine Green | `#15803d` | `#22c55e` | Matriks zamrud pekat, segar dan menenangkan. |
+| **Xeoo Green Soft** | Soft | Herbal Sage Slate | `#1f2d24` | `#4ade80` | Hijau sage pastel ramah mata untuk sesi panjang. |
+| **Xeoo Green Light** | Light | Cream Herbal Paper | `#166534` | `#15803d` | Kertas herbal alami dengan tinta pinus pekat. |
 
 </details>
 
 <details>
-<summary><h3>🌊 3. Ocean &amp; Deep Water — 4 Tema</h3></summary>
+<summary><b>🔵 3. Blue (Biru) — Sapphire &amp; Cobalt</b></summary>
 
-> _Kesejukan palet samudra dan es kutub yang menenangkan fokus pikiran selama berjam-jam._
-
-| Nama Tema             | Tipe | Latar Utama | Aksen Unik                | Karakter Visual                                                     |
-| :-------------------- | :--- | :---------- | :------------------------ | :------------------------------------------------------------------ |
-| **Xeoo Deep Abyss**   | Dark | `#0a0e17`   | Ice Cyan `#38bdf8`        | Kedalaman samudra palung laut dengan aksen biru es bioluminescent.  |
-| **Xeoo Aqua Marine**  | Dark | `#0b1317`   | Seafoam Mint `#14b8a6`    | Charcoal kehijauan dengan kesegaran aqua laut dangkal.              |
-| **Xeoo Cobalt Night** | Dark | `#0b1021`   | Sky Blue `#60a5fa`        | Midnight navy kerajaan dengan pendaran safir biru dan aksen emas.   |
-| **Xeoo Nordic Frost** | Dark | `#0f141c`   | Crystalline Ice `#93c5fd` | Batu polar kutub utara dengan kristal es sejuk berdaya baca tinggi. |
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Blue Dark** | Dark | Abyssal Royal Navy | `#1d4ed8` | `#3b82f6` | Biru safir kerajaan dengan kontras tinggi. |
+| **Xeoo Blue Soft** | Soft | Denim Polar Slate | `#1c263c` | `#60a5fa` | Biru denim tenang yang menjaga ketajaman fokus. |
+| **Xeoo Blue Light** | Light | Glacier Mist Paper | `#1d4ed8` | `#2563eb` | Kabut es gletser dengan tinta biru kobalt tajam. |
 
 </details>
 
 <details>
-<summary><h3>🌿 4. Earth, Forest &amp; Warm Cozy — 4 Tema</h3></summary>
+<summary><b>🟡 4. Yellow (Kuning) — Canary &amp; Amber</b></summary>
 
-> _Sentuhan alam organik dan kehangatan kafe roastery yang memanjakan mata._
-
-| Nama Tema               | Tipe | Latar Utama | Aksen Unik              | Karakter Visual                                                  |
-| :---------------------- | :--- | :---------- | :---------------------- | :--------------------------------------------------------------- |
-| **Xeoo Emerald Forest** | Dark | `#0d1410`   | Lush Emerald `#22c55e`  | Hutan pinus lebat dengan sentuhan hijau zamrud alami.            |
-| **Xeoo Matcha Dark**    | Dark | `#121512`   | Bamboo Jade `#84cc16`   | Slate herbal ala Kyoto dengan warna bambu lime yang menyegarkan. |
-| **Xeoo Espresso Roast** | Dark | `#14110f`   | Caramel Crema `#d97706` | Kopi sangrai mocha pekat dengan kehangatan karamel krimer.       |
-| **Xeoo Autumn Amber**   | Dark | `#16110e`   | Maple Amber `#f59e0b`   | Kayu mahoni musim gugur dengan warna keemasan daun maple.        |
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Yellow Dark** | Dark | Dark Umber Slate | `#b45309` | `#eab308` | Kuning kenari kontras tinggi di atas latar gelap. |
+| **Xeoo Yellow Soft** | Soft | Honeycomb Slate | `#2f2819` | `#facc15` | Emas pastel madu hangat dan santai. |
+| **Xeoo Yellow Light** | Light | Butter Parchment | `#d97706` | `#ca8a04` | Kertas mentega hangat dengan tinta ochre pekat. |
 
 </details>
 
 <details>
-<summary><h3>🌑 5. Minimalist &amp; Slate Monochrome — 4 Tema</h3></summary>
+<summary><b>⚫ 5. Black (Hitam) — OLED &amp; Obsidian</b></summary>
 
-> _Desain bebas distraksi bagi programmer yang menyukai kesederhanaan tingkat tinggi._
-
-| Nama Tema               | Tipe | Latar Utama | Aksen Unik              | Karakter Visual                                                   |
-| :---------------------- | :--- | :---------- | :---------------------- | :---------------------------------------------------------------- |
-| **Xeoo Slate Carbon**   | Dark | `#15171c`   | Pastel Lilac `#c084fc`  | Karbon gunmetal presisi dengan harmoni warna pastel seimbang.     |
-| **Xeoo Titanium Grey**  | Dark | `#18181b`   | Lemon Yellow `#facc15`  | Matte industrial abu-abu dengan kontras tinggi kuning lemon.      |
-| **Xeoo Dracula Shade**  | Dark | `#181524`   | Coral Crimson `#ff5555` | Nuansa gothic slate klasik dengan warna pastel merah dan mint.    |
-| **Xeoo Crimson Carbon** | Dark | `#16161a`   | Laser Red `#ff3366`     | Matriks stealth carbon dengan aksen garis merah tajam dan akurat. |
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Black OLED** | Dark | True Black `#000` | `#141414` | `#ffffff` | Hitam pekat sejati khusus layar OLED. |
+| **Xeoo Black Soft** | Soft | Matte Obsidian | `#222226` | `#e2e8f0` | Arang obsidian matte yang seimbang dan elegan. |
 
 </details>
 
 <details>
-<summary><h3>☀️ 6. Light &amp; Paper (Anti-Glare / Anti-Silau) — 6 Tema</h3></summary>
+<summary><b>⚪ 6. White (Putih) — Paper &amp; Alabaster (Anti-Glare)</b></summary>
 
-> _Inovasi tema terang yang ramah mata: tanpa kanvas putih menyilaukan, menggunakan kertas alami dan tinta mineral pekat._
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo White Paper** | Light | Japanese Parchment | `#292524` | `#44403c` | Kertas perkamen bebas silau dengan tinta Sumi pekat. |
+| **Xeoo White Soft** | Soft | Alabaster Slate | `#334155` | `#475569` | Abu-abu alabaster sejuk dengan kontras lembut. |
 
-| Nama Tema                   | Tipe  | Latar Utama | Aksen Unik             | Karakter Visual                                                              |
-| :-------------------------- | :---- | :---------- | :--------------------- | :--------------------------------------------------------------------------- |
-| **Xeoo Paper White**        | Light | `#f8f7f4`   | Deep Ruby `#be123c`    | **Japanese Parchment**. Bebas silau, kontras tinta arang Sumi pekat (~14:1). |
-| **Xeoo Sakura Light**       | Light | `#faf6f7`   | Cherry Rose `#e11d48`  | Porselen hangat berpadu warna kelopak bunga sakura rose dan plum.            |
-| **Xeoo Nord Snow**          | Light | `#f4f6f9`   | Royal Navy `#2563eb`   | Kabut siang hari kutub dengan ketajaman safir biru klasik.                   |
-| **Xeoo Matcha Latte Light** | Light | `#f5f7f2`   | Forest Pine `#15803d`  | Kertas krim herbal dengan aksen dedaunan hijau alami menyejukkan.            |
-| **Xeoo Sepia Vintage**      | Light | `#f5efe6`   | Antique Rust `#b45309` | Kertas perkamen buku klasik dengan tinta kenari dan amber karat.             |
-| **Xeoo Cyber Light**        | Light | `#eef2f6`   | Indigo Tech `#4f46e5`  | Kabut perak futuristik dengan aksen indigo elektrik tajam.                   |
+</details>
+
+<details>
+<summary><b>🟣 7. Purple (Ungu) — Amethyst &amp; Twilight</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Purple Dark** | Dark | Deep Twilight | `#7e22ce` | `#a855f7` | Ungu amethyst bercahaya bernuansa magis. |
+| **Xeoo Purple Soft** | Soft | Lavender Night | `#2a1f3c` | `#c084fc` | Lavender pastel tenang untuk mengurangi ketegangan. |
+| **Xeoo Purple Light** | Light | Lilac Cream Paper | `#6b21a8` | `#7e22ce` | Porselen lilac lembut dengan tinta ungu kerajaan. |
+
+</details>
+
+<details>
+<summary><b>🟠 8. Orange (Oranye) — Ember &amp; Terracotta</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Orange Dark** | Dark | Ember Obsidian | `#c2410c` | `#f97316` | Bara api oranye hangat dan penuh energi. |
+| **Xeoo Orange Soft** | Soft | Terracotta Slate | `#332014` | `#fb923c` | Nuansa tanah liat terracotta hangat bersahabat. |
+| **Xeoo Orange Light**| Light | Apricot Paper | `#c2410c` | `#ea580c` | Kertas aprikot cerah dengan tinta tembaga gelap. |
+
+</details>
+
+<details>
+<summary><b>🌸 9. Pink (Pink) — Sakura &amp; Rose</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Pink Dark** | Dark | Midnight Berry | `#be185d` | `#ec4899` | Neon pink elektrik modern di latar gelap. |
+| **Xeoo Pink Soft** | Soft | Rose Quartz Night | `#301a2a` | `#f472b6` | Pastel rose quartz lembut ala kelopak sakura. |
+| **Xeoo Pink Light** | Light | Cherry Blossom Cream | `#be185d` | `#db2777` | Kertas bunga sakura manis dengan tinta berry. |
+
+</details>
+
+<details>
+<summary><b>💠 10. Cyan (Sian) — Aqua &amp; Cyber Cyan</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Cyan Dark** | Dark | Cybernetic Aqua | `#0e7490` | `#06b6d4` | Biru cyan futuristik berdaya pancar tinggi. |
+| **Xeoo Cyan Soft** | Soft | Seafoam Slate | `#182b30` | `#22d3ee` | Cyan pastel sejuk seperti air laut dangkal. |
+| **Xeoo Cyan Light** | Light | Crystal Pool Paper | `#0e7490` | `#0891b2` | Kertas kolam es dengan tinta biru samudra. |
+
+</details>
+
+<details>
+<summary><b>🪙 11. Gray (Abu-abu) — Titanium &amp; Slate</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Gray Dark** | Dark | Titanium Charcoal | `#27272a` | `#94a3b8` | Abu-abu industri netral tanpa warna pengganggu. |
+| **Xeoo Gray Soft** | Soft | Minimal Slate | `#2b2b31` | `#cbd5e1` | Slate netral murni untuk fokus koding maksimal. |
+| **Xeoo Gray Light** | Light | Platinum Paper | `#343a40` | `#495057` | Kertas platinum editorial dengan tinta arang tajam. |
+
+</details>
+
+<details>
+<summary><b>🔮 12. Indigo (Indigo) — Midnight &amp; Deep Space</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Indigo Dark** | Dark | Deep Midnight Space | `#4338ca` | `#6366f1` | Biru nila kosmik pekat berpadu indigo elektrik. |
+| **Xeoo Indigo Soft** | Soft | Atmospheric Twilight | `#242347` | `#818cf8` | Indigo pastel teduh untuk mata yang sensitif. |
+| **Xeoo Indigo Light**| Light | Silver Mist Paper | `#3730a3` | `#4f46e5` | Kabut perak dengan tinta midnight indigo pekat. |
+
+</details>
+
+<details>
+<summary><b>🟤 13. Brown (Cokelat) — Mocha &amp; Walnut</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Brown Dark** | Dark | Roasted Dark Mocha | `#78350f` | `#b45309` | Kopi sangrai mocha pekat dengan kehangatan karamel. |
+| **Xeoo Brown Soft** | Soft | Coffeehouse Slate | `#2e221b` | `#d97706` | Nuansa kafe roastery santai dan nyaman. |
+| **Xeoo Brown Light** | Light | Vintage Book Parchment | `#78350f` | `#92400e` | Perkamen buku antik dengan tinta kenari pekat. |
+
+</details>
+
+<details>
+<summary><b>👑 14. Gold (Emas) — Imperial Gold &amp; Amber</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Gold Dark** | Dark | Imperial Obsidian | `#b45309` | `#f59e0b` | Emas kerajaan mewah dengan kontras tinggi. |
+| **Xeoo Gold Soft** | Soft | Champagne Slate | `#352914` | `#fbbf24` | Emas sampanye lembut yang memanjakan mata. |
+| **Xeoo Gold Light** | Light | Ivory Parchment | `#b45309` | `#d97706` | Gading gajah hangat dengan tinta emas amber gelap. |
+
+</details>
+
+<details>
+<summary><b>🌊 15. Teal (Hijau Kebiruan) — Deep Sea &amp; Lagoon</b></summary>
+
+| Nama Tema | Varian | Header / Sidebar | Footer Bar | Aksen Utama | Karakter Visual |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xeoo Teal Dark** | Dark | Oceanic Trench | `#0f766e` | `#14b8a6` | Palung laut dalam dengan aksen hijau toska sejuk. |
+| **Xeoo Teal Soft** | Soft | Lagoon Slate | `#182b27` | `#2dd4bf` | Toska laguna pastel lembut dan menenangkan. |
+| **Xeoo Teal Light** | Light | Shallow Reef Paper | `#0f766e` | `#0d9488` | Kertas terumbu karang dangkal dengan tinta toska pekat. |
 
 </details>
 
 ---
 
-## 🛠️ Alur Kompilasi &amp; Pembuatan Paket
+## 🛠️ Perintah Pengembang
 
-Bagi Anda yang ingin mengustomisasi warna sendiri atau mengemas ulang berkas `.vsix`:
-
-- 🔨 **Kompilasi Ulang Tema**:
+* 🔨 **Build Ulang Tema**:
   ```bash
   npm run build
   ```
-- 👀 **Mode Live Watch (Hot Reloading)**:
+* 👀 **Mode Live Watch**:
   ```bash
   npm run watch
   ```
-- 📦 **Kemas Berkas `.vsix` Baru**:
+* 📦 **Kemas Installer `.vsix` Baru**:
   ```bash
   npm run package
   ```
@@ -251,9 +303,9 @@ Bagi Anda yang ingin mengustomisasi warna sendiri atau mengemas ulang berkas `.v
 
 <div align="center">
 
-  <p>Dikembangkan dengan ❤️ dan dedikasi estetika tingkat tinggi oleh <strong>NTTBELL</strong>.</p>
+  <p>Dikembangkan dengan ❤️ dan dedikasi estetika tingkat tinggi oleh <strong>ZXMARCHIA</strong>.</p>
   <p>Dilisensikan di bawah <a href="LICENSE">MIT License</a>.</p>
 
-  <p><em>Koding lebih menyenangkan, mata tetap nyaman dengan <strong>Xeoo Theme</strong>! 🚀</em></p>
+  <p><em>Koding lebih menyenangkan, mata tetap nyaman dengan <strong>Xeoo Theme Suite</strong>! 🚀</em></p>
 
 </div>
