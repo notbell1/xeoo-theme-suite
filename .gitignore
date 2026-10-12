@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# Package builds & staging
-*.vsix
+# Package staging (temporary build cache)
 .vsix_stage/
 
 # Testing & Logs
