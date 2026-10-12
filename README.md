@@ -1,36 +1,87 @@
 # ZX Theme 🍎
 
-A professional, modern dark theme with **Fresh Deep Red** accents. Designed for developers who love high-contrast syntax highlighting and a clean, minimalist workspace.
-
-## ✨ Features
-
-- **Deep Charcoal Background**: Reduces eye strain during long coding sessions.
-- **Fresh Red Accents**: Vibrant red highlights (`#9b001a`) for keywords and UI elements.
-- **Balanced Contrast**: Perfectly tuned colors for PHP, JavaScript, Laravel, and Luau.
-- **Modern UI**: Clean sidebar, status bar, and activity bar for a distraction-free environment.
-
-## 🎨 Palette
-
-| Element              | Hex Code  | Preview       |
-| :------------------- | :-------- | :------------ |
-| **Main Background**  | `#141414` | Dark Charcoal |
-| **Activity Bar**     | `#212121` | Slate Grey    |
-| **Accent Primary**   | `#ff0000` | Pure Red      |
-| **Accent Secondary** | `#00b221` | Neon Green    |
-| **Selection**        | `#9b001a` | Deep Blood    |
-
-## 🚀 Installation
-
-1. Open **Visual Studio Code**
-2. Go to **Extensions** (`Ctrl+Shift+X`)
-3. Search for `ZX Theme`
-4. Click **Install**
-5. Select **ZX Theme** as your color theme.
-
-## 🛠 Support
-
-If you find any issues or have suggestions, feel free to open an issue on [GitHub](https://github.com/notbell1/zx-theme/issues).
+A sophisticated, modern dark theme featuring **Fresh Deep Crimson** accents. Engineered with strict visual hierarchy and WCAG-compliant contrast for developers in **PHP, Laravel, Luau, JavaScript, and TypeScript**.
 
 ---
 
-**Enjoy coding with ZX Theme!** Developed by **ZXMARCHIA**
+## 🎨 Themes Included
+
+| Variant | Base Background | Accent Personality | Description |
+| :--- | :--- | :--- | :--- |
+| **ZX Theme** | `#121215` (Obsidian Charcoal) | `#f43f5e` (Crimson Rose) | **Flagship**. Soft on the eyes for 10+ hour coding sessions with refined depth. |
+| **ZX Theme (Midnight)** | `#09090b` (True OLED Black) | `#ff3366` (Neon Crimson) | **High Contrast**. Pitch-black background engineered for OLED displays. |
+
+---
+
+## ✨ Design Principles & UI/UX Highlights
+
+- **Visual Depth & Elevation Hierarchy**: Distinct background steps for Base Editor (`#121215`), Receded Panels/Sidebar (`#0e0e11`), and Floating Surfaces (`#18181d`).
+- **Balanced Crimson Accents**: Replaced harsh raw red (`#ff0000`) with modern, eye-friendly Crimson & Ruby scales (`#f43f5e`, `#be123c`, `#881337`).
+- **Readable Syntax Contrast (WCAG AA)**:
+  - **Keywords & Control**: Crimson Coral (`#ff4d6d`)
+  - **Functions & Methods**: Sky Blue (`#60a5fa`)
+  - **Strings**: Soft Emerald Mint (`#4ade80`) — no more eye-fatiguing electric green!
+  - **Numbers & Constants**: Warm Tangerine Orange (`#fb923c`) — high contrast and instant legibility.
+  - **Types & Classes**: Amber Yellow (`#fbbf24`)
+  - **Variables**: Clean Ice White (`#f1f5f9`)
+  - **Comments**: Slate Grey (`#64748b`) with italic styling
+- **Full Workbench Coverage**: Over 180 styled UI elements including Editor, Tabs, Activity Bar, Breadcrumbs, Status Bar, Terminal, Git Gutter, Notifications, and Command Palette.
+- **Modern Semantic Tokens**: Supports modern VS Code Language Server Protocol (LSP) semantic token highlighting.
+
+---
+
+## 🏗 Modular Project Architecture
+
+This project is built with a scalable **Design Token System** to make maintenance and future development seamless:
+
+```text
+zx-theme/
+├── package.json
+├── src/
+│   ├── build.js                 # Automated build script (npm run build / watch)
+│   ├── tokens/
+│   │   ├── palette.js           # Core color palette & design tokens (SSOT)
+│   │   └── ui.js                # VS Code Workbench UI color definitions
+│   ├── syntax/
+│   │   ├── textmate.js          # TextMate syntax scopes (PHP, Luau, JS, HTML, CSS, etc.)
+│   │   └── semantic.js          # Modern VS Code semantic LSP highlights
+│   └── themes/
+│       ├── zx-theme.js          # Flagship Theme Generator
+│       └── zx-theme-midnight.js # Midnight OLED Variant Generator
+└── themes/
+    ├── zx-theme-color-theme.json          # Compiled Theme
+    └── zx-theme-midnight-color-theme.json # Compiled Variant
+```
+
+---
+
+## 🛠 Development & Maintenance Workflow
+
+### 1. Build the Themes
+To compile the theme JSON files from source tokens:
+```bash
+npm run build
+```
+
+### 2. Live Watch Mode (Hot Reloading)
+To automatically recompile whenever you edit tokens or syntax in `src/`:
+```bash
+npm run watch
+```
+
+### 3. Test in VS Code (Extension Development Host)
+1. Press `F5` in VS Code to open a new **Extension Development Host** window.
+2. Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+3. Select **Preferences: Color Theme** and choose **ZX Theme** or **ZX Theme (Midnight)**.
+
+### 4. Package Extension
+To package the extension into a `.vsix` file:
+```bash
+npm run package
+```
+
+---
+
+## 📝 License
+
+Distributed under the [MIT License](LICENSE). Developed with ❤️ by **ZXMARCHIA**.
