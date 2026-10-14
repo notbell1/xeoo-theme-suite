@@ -15,11 +15,14 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
       storage: secondary || primary,
       func: '#1d4ed8',         // Deep Royal Blue
       method: '#0369a1',       // Deep Ocean Blue
+      builtin: '#0f766e',      // Deep Teal
       string: '#15803d',       // Forest Green
+      stringEscape: '#b91c1c', // Crimson Escape
       number: '#c2410c',       // Burnt Amber
       constant: '#b45309',     // Rich Ochre
       type: '#6b21a8',         // Royal Purple
       class: '#7e22ce',
+      interface: '#581c87',
       variable: '#1e293b',     // Deep Slate Ink
       property: '#334155',     // Mineral Ink
       parameter: '#9333ea',    // Violet Ink
@@ -27,8 +30,17 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
       delimiter: '#64748b',
       regex: primary,
       tag: primary,
+      tagComponent: '#1d4ed8', // Royal Blue Component
       attribute: '#7e22ce',
       comment: '#64748b',
+      docComment: '#475569',
+      decorator: '#be185d',    // Deep Crimson/Rose
+      macro: '#6b21a8',
+      link: '#1d4ed8',
+      heading: primary,
+      diffAdded: '#15803d',
+      diffRemoved: '#dc2626',
+      diffModified: '#0284c7',
     };
   }
 
@@ -38,11 +50,14 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
       storage: secondary || primary,
       func: '#93c5fd',         // Soft Sky
       method: '#bae6fd',
+      builtin: '#5eead4',      // Soft Teal
       string: '#86efac',       // Soft Mint
+      stringEscape: '#f472b6',
       number: '#fdba74',       // Soft Peach
       constant: '#fed7aa',
       type: '#fde047',         // Pastel Sun
       class: '#fef08a',
+      interface: '#fef9c3',
       variable: '#f1f5f9',     // Soft Off-White
       property: '#cbd5e1',     // Soft Mist
       parameter: '#d8b4fe',    // Soft Lavender
@@ -50,8 +65,17 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
       delimiter: '#94a3b8',
       regex: '#f472b6',
       tag: primary,
+      tagComponent: '#93c5fd',
       attribute: '#c084fc',
       comment: '#64748b',
+      docComment: '#78889c',
+      decorator: '#f9a8d4',    // Soft Pink
+      macro: '#c4b5fd',
+      link: '#93c5fd',
+      heading: primary,
+      diffAdded: '#86efac',
+      diffRemoved: '#fb7185',
+      diffModified: '#93c5fd',
     };
   }
 
@@ -61,11 +85,14 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
     storage: secondary || primary,
     func: '#60a5fa',           // Vivid Ice Blue
     method: '#38bdf8',
+    builtin: '#2dd4bf',        // Vivid Teal Mint
     string: '#4ade80',         // Vivid Mint Green
+    stringEscape: '#f43f5e',   // Vivid Rose
     number: '#fb923c',         // Vivid Tangerine
     constant: '#f97316',
     type: '#fcd34d',           // Vivid Gold
     class: '#fbbf24',
+    interface: '#fde047',
     variable: '#f8fafc',       // Crisp White
     property: '#e2e8f0',
     parameter: '#c084fc',      // Vivid Lilac
@@ -73,8 +100,17 @@ function buildSyntax(primary, secondary, isLight = false, isSoft = false) {
     delimiter: '#94a3b8',
     regex: '#f43f5e',
     tag: primary,
+    tagComponent: '#38bdf8',   // Distinct Cyan for React Components
     attribute: '#c084fc',
     comment: '#64748b',
+    docComment: '#78889c',
+    decorator: '#f472b6',      // Vivid Pink/Rose
+    macro: '#a78bfa',          // Vivid Purple
+    link: '#38bdf8',
+    heading: primary,
+    diffAdded: '#4ade80',
+    diffRemoved: '#f43f5e',
+    diffModified: '#38bdf8',
   };
 }
 

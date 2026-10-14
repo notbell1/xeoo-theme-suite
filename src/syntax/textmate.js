@@ -1,465 +1,1288 @@
 /**
- * Xeoo Theme Suite - TextMate Syntax Scope Tokens
- * Tuned for PHP, Laravel (Blade), JavaScript, TypeScript, Luau/Lua, HTML/CSS, JSON, Markdown.
+ * Xeoo Theme Suite - Master TextMate Syntax Scope Tokens
+ * Calibrated across 43 themes for Web, Backend, Systems, Styling, Data, Mobile, and Game Dev.
  */
 
 function generateTextMateTokens(themeConfig) {
   const syntax = themeConfig.syntax || themeConfig;
 
   return [
-    // -------------------------------------------------------------
-    // Comments & Documentation
-    // -------------------------------------------------------------
+    // =============================================================
+    // 1. Comments & Documentation
+    // =============================================================
     {
       name: 'Comments',
       scope: [
         'comment',
+        'comment.line',
+        'comment.block',
         'punctuation.definition.comment',
-        'string.comment'
+        'string.comment',
       ],
       settings: {
         foreground: syntax.comment,
-        fontStyle: 'italic'
-      }
+        fontStyle: 'italic',
+      },
     },
     {
-      name: 'Documentation Comments',
+      name: 'Documentation Comments & Docstrings',
       scope: [
         'comment.block.documentation',
         'comment.block.documentation punctuation.definition.comment',
+        'comment.line.documentation',
+        'string.quoted.docstring',
+        'string.quoted.docstring punctuation.definition.string',
+        'string.quoted.multi.python',
         'storage.type.class.jsdoc',
-        'entity.name.type.instance.jsdoc'
+        'entity.name.type.instance.jsdoc',
+        'variable.other.jsdoc',
       ],
       settings: {
-        foreground: syntax.comment,
-        fontStyle: 'italic'
-      }
+        foreground: syntax.docComment || syntax.comment,
+        fontStyle: 'italic',
+      },
     },
 
-    // -------------------------------------------------------------
-    // Keywords & Control Flow
-    // -------------------------------------------------------------
+    // =============================================================
+    // 2. Keywords, Control Flow & Storage Modifiers
+    // =============================================================
     {
-      name: 'Keywords & Control Flow',
+      name: 'Control Flow & Core Keywords',
       scope: [
         'keyword',
         'keyword.control',
-        'keyword.operator.new',
-        'keyword.operator.expression',
+        'keyword.control.conditional',
+        'keyword.control.repeat',
+        'keyword.control.loop',
+        'keyword.control.flow',
+        'keyword.control.trycatch',
+        'keyword.control.exception',
+        'keyword.control.switch',
+        'keyword.control.case',
+        'keyword.control.default',
+        'keyword.control.return',
+        'keyword.control.yield',
+        'keyword.control.await',
+        'keyword.control.async',
+        'keyword.control.import',
+        'keyword.control.from',
+        'keyword.control.export',
+        'keyword.control.use',
         'keyword.operator.logical.python',
         'keyword.operator.wordlike',
-        'keyword.other.unit'
       ],
       settings: {
         foreground: syntax.keyword,
-        fontStyle: 'bold'
-      }
+        fontStyle: 'bold',
+      },
     },
     {
-      name: 'Storage Types & Modifiers',
+      name: 'Operator Keywords (new, typeof, instanceof, in, as)',
+      scope: [
+        'keyword.operator.new',
+        'keyword.operator.expression',
+        'keyword.operator.instanceof',
+        'keyword.operator.typeof',
+        'keyword.operator.keyof',
+        'keyword.operator.in',
+        'keyword.operator.is',
+        'keyword.operator.as',
+        'keyword.operator.delete',
+        'keyword.operator.void',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'Storage Types & Declarations',
       scope: [
         'storage',
         'storage.type',
-        'storage.modifier',
-        'keyword.declaration'
+        'storage.type.function',
+        'storage.type.class',
+        'storage.type.interface',
+        'storage.type.enum',
+        'storage.type.trait',
+        'storage.type.struct',
+        'keyword.declaration',
+        'keyword.declaration.function',
+        'keyword.declaration.class',
+        'keyword.declaration.variable',
       ],
       settings: {
-        foreground: syntax.storage
-      }
+        foreground: syntax.storage,
+      },
+    },
+    {
+      name: 'Storage Modifiers (async, static, public, private, readonly)',
+      scope: [
+        'storage.modifier',
+        'storage.modifier.async',
+        'storage.modifier.static',
+        'storage.modifier.public',
+        'storage.modifier.private',
+        'storage.modifier.protected',
+        'storage.modifier.readonly',
+        'storage.modifier.override',
+        'storage.modifier.final',
+        'storage.modifier.abstract',
+        'storage.modifier.const',
+        'storage.modifier.extern',
+        'storage.modifier.mut',
+      ],
+      settings: {
+        foreground: syntax.storage,
+        fontStyle: 'italic',
+      },
     },
 
-    // -------------------------------------------------------------
-    // Strings & Character Escapes
-    // -------------------------------------------------------------
+    // =============================================================
+    // 3. Strings, Character Escapes & Template Literals
+    // =============================================================
     {
       name: 'Strings',
       scope: [
         'string',
         'string.quoted',
+        'string.quoted.single',
+        'string.quoted.double',
         'string.template',
-        'punctuation.definition.string'
+        'punctuation.definition.string.begin',
+        'punctuation.definition.string.end',
       ],
       settings: {
-        foreground: syntax.string
-      }
+        foreground: syntax.string,
+      },
     },
     {
-      name: 'Regex & Escape Characters',
+      name: 'Escape Sequences & Placeholders',
       scope: [
-        'string.regexp',
         'constant.character.escape',
-        'constant.other.placeholder'
+        'constant.other.placeholder',
+        'constant.character.format.placeholder',
       ],
       settings: {
-        foreground: syntax.regex
-      }
+        foreground: syntax.stringEscape || syntax.regex,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Regular Expressions',
+      scope: [
+        'string.regexp',
+        'punctuation.definition.string.regexp',
+        'constant.other.character-class.regexp',
+        'keyword.operator.quantifier.regexp',
+      ],
+      settings: {
+        foreground: syntax.regex,
+      },
+    },
+    {
+      name: 'Template Literal Expressions Reset',
+      scope: [
+        'meta.template.expression',
+        'meta.embedded.line',
+      ],
+      settings: {
+        foreground: syntax.variable,
+      },
+    },
+    {
+      name: 'Template Literal Expression Delimiters',
+      scope: [
+        'punctuation.definition.template-expression.begin',
+        'punctuation.definition.template-expression.end',
+        'punctuation.section.embedded.begin',
+        'punctuation.section.embedded.end',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
     },
 
-    // -------------------------------------------------------------
-    // Numbers, Booleans & Constants
-    // -------------------------------------------------------------
+    // =============================================================
+    // 4. Numbers, Units, Booleans & Constants
+    // =============================================================
     {
       name: 'Numbers & Units',
       scope: [
         'constant.numeric',
-        'keyword.other.unit'
+        'constant.numeric.integer',
+        'constant.numeric.float',
+        'constant.numeric.hex',
+        'constant.numeric.binary',
+        'constant.numeric.octal',
+        'keyword.other.unit',
       ],
       settings: {
-        foreground: syntax.number
-      }
+        foreground: syntax.number,
+      },
     },
     {
       name: 'Language Constants & Booleans',
       scope: [
-        'constant.language',
         'constant.language.boolean',
         'constant.language.null',
         'constant.language.undefined',
-        'support.constant'
+        'constant.language.nil',
+        'constant.language.nan',
+        'constant.language',
       ],
       settings: {
         foreground: syntax.constant,
-        fontStyle: 'bold'
-      }
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'System, Library & User Constants',
+      scope: [
+        'support.constant',
+        'variable.other.constant',
+        'variable.other.enummember',
+        'constant.other',
+      ],
+      settings: {
+        foreground: syntax.constant,
+      },
     },
 
-    // -------------------------------------------------------------
-    // Functions & Methods
-    // -------------------------------------------------------------
+    // =============================================================
+    // 5. Functions & Methods
+    // =============================================================
     {
-      name: 'Functions & Calls',
+      name: 'Function Declarations',
       scope: [
         'entity.name.function',
-        'meta.function-call',
-        'variable.function',
-        'support.function'
+        'meta.function entity.name.function',
       ],
       settings: {
-        foreground: syntax.func
-      }
+        foreground: syntax.func,
+        fontStyle: 'bold',
+      },
     },
     {
-      name: 'Object & Class Methods',
+      name: 'Method Declarations & Calls',
       scope: [
-        'meta.method.declaration entity.name.function',
         'entity.name.function.member',
-        'support.function.misc'
+        'meta.method.declaration entity.name.function',
+        'meta.function.member entity.name.function',
       ],
       settings: {
-        foreground: syntax.method
-      }
+        foreground: syntax.method,
+      },
+    },
+    {
+      name: 'Function Invocations & Calls',
+      scope: [
+        'variable.function',
+        'meta.function-call.generic entity.name.function',
+        'support.function',
+      ],
+      settings: {
+        foreground: syntax.func,
+      },
+    },
+    {
+      name: 'Built-in & Library Functions',
+      scope: [
+        'support.function.builtin',
+        'support.function.console',
+        'support.function.misc',
+      ],
+      settings: {
+        foreground: syntax.builtin || syntax.func,
+      },
     },
 
-    // -------------------------------------------------------------
-    // Classes, Types, Interfaces & Namespaces
-    // -------------------------------------------------------------
+    // =============================================================
+    // 6. Types, Classes, Interfaces & Namespaces
+    // =============================================================
     {
-      name: 'Classes & Types',
+      name: 'Classes, Structs & Inherited Classes',
       scope: [
-        'entity.name.type',
+        'entity.name.type.class',
         'entity.name.class',
         'support.class',
-        'support.type',
-        'entity.other.inherited-class'
+        'entity.other.inherited-class',
       ],
       settings: {
-        foreground: syntax.class
-      }
+        foreground: syntax.class,
+        fontStyle: 'bold',
+      },
     },
     {
-      name: 'Interfaces & Type Aliases',
+      name: 'Interfaces & Traits',
       scope: [
         'entity.name.type.interface',
-        'entity.name.type.alias'
+        'entity.name.type.trait',
       ],
       settings: {
-        foreground: syntax.type
-      }
+        foreground: syntax.interface || syntax.type,
+      },
+    },
+    {
+      name: 'Types, Type Aliases & Type Parameters',
+      scope: [
+        'entity.name.type',
+        'support.type',
+        'entity.name.type.alias',
+        'entity.name.type.parameter',
+        'variable.type.parameter',
+      ],
+      settings: {
+        foreground: syntax.type,
+      },
+    },
+    {
+      name: 'Primitive Types (int, string, bool, void, any)',
+      scope: [
+        'support.type.primitive',
+        'storage.type.numeric',
+        'storage.type.string',
+        'storage.type.boolean',
+      ],
+      settings: {
+        foreground: syntax.type,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Enums',
+      scope: [
+        'entity.name.type.enum',
+      ],
+      settings: {
+        foreground: syntax.class,
+      },
+    },
+    {
+      name: 'Namespaces, Modules & Packages',
+      scope: [
+        'entity.name.namespace',
+        'entity.name.type.namespace',
+        'support.other.namespace',
+        'entity.name.type.module',
+        'support.module',
+        'entity.name.package',
+      ],
+      settings: {
+        foreground: syntax.class,
+      },
     },
 
-    // -------------------------------------------------------------
-    // Variables & Parameters
-    // -------------------------------------------------------------
+    // =============================================================
+    // 7. Variables, Identifiers, Parameters & Properties
+    // =============================================================
     {
       name: 'Variables',
       scope: [
         'variable',
+        'variable.other',
         'variable.other.readwrite',
-        'variable.other.object'
+        'variable.other.local',
       ],
       settings: {
-        foreground: syntax.variable
-      }
+        foreground: syntax.variable,
+      },
     },
     {
-      name: 'Function Parameters',
+      name: 'Function & Method Parameters',
       scope: [
         'variable.parameter',
-        'meta.parameters variable.other'
+        'meta.parameters variable',
       ],
       settings: {
-        foreground: syntax.parameter
-      }
+        foreground: syntax.parameter,
+        fontStyle: 'italic',
+      },
     },
     {
-      name: 'Properties & Object Keys',
+      name: 'Properties, Fields & Object Members',
       scope: [
         'variable.other.property',
+        'variable.other.object.property',
         'variable.object.property',
         'support.type.property-name',
-        'meta.object-literal.key'
+        'meta.field.declaration',
       ],
       settings: {
-        foreground: syntax.property
-      }
+        foreground: syntax.property,
+      },
     },
     {
-      name: 'Language Builtin Variables (this, self, super)',
+      name: 'Built-in Language Variables (this, self, super)',
       scope: [
         'variable.language.this',
         'variable.language.special.self',
         'variable.language.super',
-        'variable.language'
+        'variable.language',
       ],
       settings: {
         foreground: syntax.keyword,
-        fontStyle: 'italic'
-      }
+        fontStyle: 'italic',
+      },
     },
 
-    // -------------------------------------------------------------
-    // Operators & Punctuation
-    // -------------------------------------------------------------
+    // =============================================================
+    // 8. Operators, Delimiters & Punctuation
+    // =============================================================
     {
       name: 'Operators',
       scope: [
         'keyword.operator',
         'keyword.operator.arithmetic',
         'keyword.operator.comparison',
-        'keyword.operator.assignment'
+        'keyword.operator.assignment',
+        'keyword.operator.logical',
+        'keyword.operator.bitwise',
+        'keyword.operator.increment-decrement',
+        'keyword.operator.ternary',
+        'keyword.operator.nullish-coalescing',
+        'keyword.operator.optional-chaining',
+        'storage.type.function.arrow',
+        'keyword.operator.key-value',
+        'punctuation.separator.key-value',
+        'keyword.operator.pipeline',
       ],
       settings: {
-        foreground: syntax.operator
-      }
+        foreground: syntax.operator,
+      },
     },
     {
-      name: 'Punctuation & Delimiters',
+      name: 'Delimiters, Accessors & Separators',
       scope: [
-        'punctuation',
         'punctuation.separator',
         'punctuation.terminator',
-        'punctuation.accessor'
+        'punctuation.accessor',
+        'punctuation.section.brackets',
+        'punctuation.section.parens',
+        'punctuation.section.braces',
       ],
       settings: {
-        foreground: syntax.delimiter
-      }
+        foreground: syntax.delimiter,
+      },
     },
 
-    // -------------------------------------------------------------
-    // HTML / XML / JSX / Blade Tags & Attributes
-    // -------------------------------------------------------------
+    // =============================================================
+    // 9. Decorators, Annotations & Macros
+    // =============================================================
     {
-      name: 'Tags',
+      name: 'Decorators (TypeScript, JavaScript, Python)',
       scope: [
-        'entity.name.tag',
-        'meta.tag.sgml',
-        'punctuation.definition.tag'
+        'entity.name.function.decorator',
+        'meta.decorator entity.name.function',
+        'punctuation.decorator',
+        'punctuation.definition.decorator',
       ],
       settings: {
-        foreground: syntax.tag
-      }
+        foreground: syntax.decorator || syntax.attribute,
+        fontStyle: 'italic',
+      },
     },
     {
-      name: 'Attributes',
+      name: 'Annotations (Java, Kotlin, C#)',
+      scope: [
+        'storage.type.annotation',
+        'punctuation.definition.annotation',
+        'meta.attribute',
+        'meta.attribute.csharp',
+      ],
+      settings: {
+        foreground: syntax.decorator || syntax.attribute,
+      },
+    },
+    {
+      name: 'Macros & Preprocessor Directives (Rust, C, C++)',
+      scope: [
+        'entity.name.function.macro',
+        'entity.name.function.macro.rust',
+        'support.macro',
+        'support.macro.rust',
+        'support.function.macro.rust',
+        'entity.name.function.preprocessor',
+        'meta.preprocessor',
+        'keyword.control.directive',
+        'meta.attribute.rust',
+        'punctuation.definition.attribute.rust',
+      ],
+      settings: {
+        foreground: syntax.macro || syntax.keyword,
+      },
+    },
+
+    // =============================================================
+    // 10. Markup: HTML, XML, JSX & TSX
+    // =============================================================
+    {
+      name: 'Tag Punctuation (<, >, </, />)',
+      scope: [
+        'punctuation.definition.tag.begin',
+        'punctuation.definition.tag.end',
+        'punctuation.definition.tag',
+      ],
+      settings: {
+        foreground: syntax.delimiter,
+      },
+    },
+    {
+      name: 'HTML & XML Standard Tags',
+      scope: [
+        'entity.name.tag.html',
+        'entity.name.tag.xml',
+        'entity.name.tag.open.jsx',
+        'entity.name.tag.close.jsx',
+        'entity.name.tag.tsx',
+        'entity.name.tag.jsx',
+        'entity.name.tag',
+      ],
+      settings: {
+        foreground: syntax.tag,
+      },
+    },
+    {
+      name: 'React & Framework Custom Component Tags',
+      scope: [
+        'support.class.component.tsx',
+        'support.class.component.jsx',
+        'entity.name.tag.component',
+      ],
+      settings: {
+        foreground: syntax.tagComponent || syntax.class,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'HTML & JSX Attributes',
       scope: [
         'entity.other.attribute-name',
         'entity.other.attribute-name.html',
-        'entity.other.attribute-name.id'
+        'entity.other.attribute-name.jsx',
+        'entity.other.attribute-name.tsx',
+        'entity.other.attribute-name.id',
       ],
       settings: {
         foreground: syntax.attribute,
-        fontStyle: 'italic'
-      }
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'JSX Expression Braces',
+      scope: [
+        'punctuation.section.embedded.begin.js',
+        'punctuation.section.embedded.end.js',
+        'punctuation.section.embedded.begin.tsx',
+        'punctuation.section.embedded.end.tsx',
+      ],
+      settings: {
+        foreground: syntax.operator,
+      },
+    },
+    {
+      name: 'HTML & Embedded Markup Text (between tags like div, p, h1-h6, span)',
+      scope: [
+        'text.html.basic',
+        'text.html',
+        'meta.tag.without-attributes',
+        'meta.jsx.children',
+      ],
+      settings: {
+        foreground: syntax.variable,
+      },
+    },
+    {
+      name: 'HTML Character Entities (&amp;, &lt;, &gt;, &quot;)',
+      scope: [
+        'constant.character.entity.html',
+        'constant.character.entity.js',
+        'punctuation.definition.entity.html',
+        'punctuation.definition.entity.js',
+      ],
+      settings: {
+        foreground: syntax.constant,
+        fontStyle: 'bold',
+      },
     },
 
-    // -------------------------------------------------------------
-    // PHP & Laravel Specific Tuning
-    // -------------------------------------------------------------
+    // =============================================================
+    // 11. CSS, SCSS, Sass & Less
+    // =============================================================
+    {
+      name: 'CSS Properties',
+      scope: [
+        'support.type.property-name.css',
+        'support.type.property-name.scss',
+        'support.type.property-name.less',
+      ],
+      settings: {
+        foreground: syntax.property,
+      },
+    },
+    {
+      name: 'CSS Property Values & Units',
+      scope: [
+        'support.constant.property-value.css',
+        'support.constant.font-name',
+        'keyword.other.unit.css',
+        'keyword.other.unit.scss',
+      ],
+      settings: {
+        foreground: syntax.number,
+      },
+    },
+    {
+      name: 'CSS Class Selectors',
+      scope: [
+        'entity.other.attribute-name.class.css',
+        'entity.other.attribute-name.class.scss',
+      ],
+      settings: {
+        foreground: syntax.attribute,
+      },
+    },
+    {
+      name: 'CSS ID Selectors',
+      scope: [
+        'entity.other.attribute-name.id.css',
+      ],
+      settings: {
+        foreground: syntax.func,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'CSS Pseudo-classes & Pseudo-elements',
+      scope: [
+        'entity.other.attribute-name.pseudo-class.css',
+        'entity.other.attribute-name.pseudo-element.css',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'CSS Variables & Custom Properties',
+      scope: [
+        'variable.css',
+        'variable.argument.css',
+        'variable.scss',
+        'variable.other.less',
+      ],
+      settings: {
+        foreground: syntax.variable,
+      },
+    },
+    {
+      name: 'CSS At-rules (@media, @import, @keyframes)',
+      scope: [
+        'keyword.control.at-rule.css',
+        'keyword.control.at-rule.media',
+        'keyword.control.at-rule.import',
+        'keyword.control.at-rule.keyframes',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+
+    // =============================================================
+    // 12. Special Requirement: Tailwind CSS & Utility Syntaxes
+    // =============================================================
+    {
+      name: 'Tailwind CSS Directives & At-Rules (@tailwind, @apply, @layer, @screen)',
+      scope: [
+        'keyword.control.at-rule.tailwind',
+        'keyword.control.at-rule.apply.tailwind',
+        'keyword.control.at-rule.layer.tailwind',
+        'keyword.control.at-rule.screen.tailwind',
+        'keyword.control.at-rule.variants.tailwind',
+        'keyword.control.at-rule.responsive.tailwind',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Tailwind CSS Helper Functions (theme(), screen())',
+      scope: [
+        'support.function.theme.tailwind',
+        'support.function.screen.tailwind',
+      ],
+      settings: {
+        foreground: syntax.builtin || syntax.func,
+      },
+    },
+    {
+      name: 'Tailwind Utility Classes',
+      scope: [
+        'entity.other.attribute-name.class.tailwind',
+        'support.type.property-name.css.tailwind',
+        'support.type.property-name.tailwind',
+      ],
+      settings: {
+        foreground: syntax.method || syntax.func,
+      },
+    },
+    {
+      name: 'Tailwind Responsive Modifiers (sm:, md:, lg:, xl:, 2xl:)',
+      scope: [
+        'keyword.other.modifier.tailwind',
+        'storage.modifier.tailwind',
+        'keyword.other.responsive.tailwind',
+      ],
+      settings: {
+        foreground: syntax.number,
+      },
+    },
+    {
+      name: 'Tailwind State & Pseudo-Class Modifiers (hover:, focus:, active:, disabled:, group-hover:)',
+      scope: [
+        'entity.other.attribute-name.pseudo-class.tailwind',
+        'keyword.other.state.tailwind',
+      ],
+      settings: {
+        foreground: syntax.storage || syntax.keyword,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Tailwind Dark-Mode Modifier (dark:)',
+      scope: [
+        'keyword.other.modifier.dark.tailwind',
+      ],
+      settings: {
+        foreground: syntax.constant,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Tailwind Modifier Colon Separator',
+      scope: [
+        'punctuation.separator.modifier.tailwind',
+        'punctuation.separator.colon.tailwind',
+      ],
+      settings: {
+        foreground: syntax.delimiter,
+      },
+    },
+    {
+      name: 'Tailwind Arbitrary Values (bg-[#121217], w-[500px])',
+      scope: [
+        'string.quoted.arbitrary-value.tailwind',
+        'meta.property-value.arbitrary.tailwind',
+        'punctuation.section.bracket.arbitrary.tailwind',
+      ],
+      settings: {
+        foreground: syntax.stringEscape || syntax.regex,
+      },
+    },
+
+    // =============================================================
+    // 13. Frontend Frameworks: Vue, Svelte, Astro, Angular
+    // =============================================================
+    {
+      name: 'Vue Directives & Bindings (v-if, @click, :class)',
+      scope: [
+        'entity.other.attribute-name.html.vue',
+        'entity.other.attribute-name.directive.vue',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Vue Template Interpolations ({{ ... }})',
+      scope: [
+        'punctuation.section.embedded.begin.vue',
+        'punctuation.section.embedded.end.vue',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'Svelte Directives & Logic Blocks ({#if}, on:click, bind:value)',
+      scope: [
+        'entity.name.directive.svelte',
+        'entity.other.attribute-name.directive.svelte',
+        'punctuation.definition.keyword.svelte',
+        'keyword.control.svelte',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Astro Frontmatter Fences & Directives (---, client:load)',
+      scope: [
+        'punctuation.definition.frontmatter.astro',
+        'entity.other.attribute-name.directive.astro',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Angular Structural Directives & Bindings (*ngIf, (click), [class])',
+      scope: [
+        'entity.other.attribute-name.angular',
+        'entity.other.attribute-name.ng-directive',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+
+    // =============================================================
+    // 14. Backend Frameworks & Templates: Blade, Twig, Jinja, Razor
+    // =============================================================
+    {
+      name: 'Laravel Blade Directives (@extends, @section, @if, @props, @vite)',
+      scope: [
+        'keyword.blade',
+        'entity.name.function.blade',
+        'punctuation.definition.directive.blade',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Laravel Blade Echo Delimiters ({{ }}, {!! !!})',
+      scope: [
+        'punctuation.definition.tag.blade',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'Twig & Jinja/Django Template Tags ({% %}, {{ }})',
+      scope: [
+        'entity.tag.tag-name.jinja',
+        'entity.tag.tag-name.twig',
+        'punctuation.definition.tag.jinja',
+        'punctuation.definition.tag.twig',
+        'keyword.control.jinja',
+        'keyword.control.twig',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'ASP.NET Razor Directives (@model, @code, @inject)',
+      scope: [
+        'keyword.control.razor',
+        'punctuation.definition.keyword.razor',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+
+    // =============================================================
+    // 15. Backend & Systems Languages: PHP, Python, Go, Rust, Java, C#, Ruby, Lua, Shell
+    // =============================================================
     {
       name: 'PHP Variables',
       scope: [
         'variable.other.php',
-        'punctuation.definition.variable.php'
+        'punctuation.definition.variable.php',
       ],
       settings: {
-        foreground: syntax.variable
-      }
+        foreground: syntax.variable,
+      },
     },
     {
-      name: 'PHP Namespaces & Use Statements',
+      name: 'PHP Namespaces & Built-in Globals',
       scope: [
         'support.other.namespace.use.php',
         'support.other.namespace.php',
-        'entity.name.type.namespace.php'
+        'entity.name.type.namespace.php',
+        'variable.other.global.safer.php',
+        'variable.other.global.php',
       ],
       settings: {
-        foreground: syntax.class
-      }
+        foreground: syntax.class,
+      },
     },
     {
-      name: 'Laravel Blade Directives',
+      name: 'Python Special & Magic Methods (__init__, __str__)',
       scope: [
-        'keyword.blade',
-        'entity.name.function.blade',
-        'punctuation.definition.directive.blade'
+        'support.function.magic.python',
       ],
       settings: {
-        foreground: syntax.keyword,
-        fontStyle: 'bold'
-      }
+        foreground: syntax.method,
+      },
     },
-
-    // -------------------------------------------------------------
-    // Luau / Lua Specific Tuning
-    // -------------------------------------------------------------
     {
-      name: 'Luau Builtins & Globals',
+      name: 'Python Built-ins (print, len, range, enumerate)',
+      scope: [
+        'support.function.builtin.python',
+      ],
+      settings: {
+        foreground: syntax.builtin || syntax.func,
+      },
+    },
+    {
+      name: 'Go Built-in Functions (make, append, len, panic)',
+      scope: [
+        'support.function.builtin.go',
+      ],
+      settings: {
+        foreground: syntax.builtin || syntax.func,
+      },
+    },
+    {
+      name: 'Go Packages',
+      scope: [
+        'entity.name.package.go',
+      ],
+      settings: {
+        foreground: syntax.class,
+      },
+    },
+    {
+      name: 'Rust Lifetimes (\'a)',
+      scope: [
+        'storage.modifier.lifetime.rust',
+        'entity.name.type.lifetime.rust',
+        'punctuation.definition.lifetime.rust',
+      ],
+      settings: {
+        foreground: syntax.storage,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Ruby Symbols (:symbol)',
+      scope: [
+        'constant.other.symbol.ruby',
+        'punctuation.definition.constant.ruby',
+      ],
+      settings: {
+        foreground: syntax.constant,
+      },
+    },
+    {
+      name: 'Ruby Instance & Class Variables (@name, @@count)',
+      scope: [
+        'variable.other.readwrite.instance.ruby',
+        'variable.other.readwrite.class.ruby',
+      ],
+      settings: {
+        foreground: syntax.property,
+      },
+    },
+    {
+      name: 'Luau & Lua Built-ins & Metamethods',
       scope: [
         'support.function.lua',
         'support.function.luau',
         'support.constant.lua',
-        'support.variable.lua'
+        'support.variable.lua',
+        'support.function.library.lua',
       ],
       settings: {
-        foreground: syntax.func
-      }
+        foreground: syntax.builtin || syntax.func,
+      },
     },
     {
       name: 'Luau Type Annotations',
       scope: [
         'entity.name.type.lua',
         'entity.name.type.luau',
-        'meta.type.annotation.lua'
+        'meta.type.annotation.lua',
       ],
       settings: {
-        foreground: syntax.type
-      }
+        foreground: syntax.type,
+      },
+    },
+    {
+      name: 'Shell & PowerShell Variables & Flags',
+      scope: [
+        'variable.other.readwrite.shell',
+        'variable.other.bracket.shell',
+        'variable.other.readwrite.powershell',
+        'punctuation.definition.variable.shell',
+        'operator.flag.powershell',
+        'variable.parameter.powershell',
+      ],
+      settings: {
+        foreground: syntax.variable,
+      },
     },
 
-    // -------------------------------------------------------------
-    // CSS & SCSS Styling
-    // -------------------------------------------------------------
-    {
-      name: 'CSS Properties',
-      scope: [
-        'support.type.property-name.css',
-        'support.type.property-name.scss'
-      ],
-      settings: {
-        foreground: syntax.property
-      }
-    },
-    {
-      name: 'CSS Values & Units',
-      scope: [
-        'support.constant.property-value.css',
-        'keyword.other.unit.css'
-      ],
-      settings: {
-        foreground: syntax.number
-      }
-    },
-    {
-      name: 'CSS Selectors (Classes & IDs)',
-      scope: [
-        'entity.other.attribute-name.class.css',
-        'entity.other.attribute-name.id.css',
-        'entity.other.attribute-name.pseudo-class.css'
-      ],
-      settings: {
-        foreground: syntax.attribute
-      }
-    },
-
-    // -------------------------------------------------------------
-    // JSON & Data Structures
-    // -------------------------------------------------------------
+    // =============================================================
+    // 16. Data & Configuration Formats (JSON, YAML, TOML, SQL, Docker, GraphQL, Terraform, Prisma)
+    // =============================================================
     {
       name: 'JSON Property Keys',
       scope: [
         'support.type.property-name.json',
-        'entity.name.tag.yaml'
       ],
       settings: {
-        foreground: syntax.keyword
-      }
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'YAML Keys',
+      scope: [
+        'entity.name.tag.yaml',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'YAML Anchors & Aliases (&anchor, *alias)',
+      scope: [
+        'variable.other.alias.yaml',
+        'punctuation.definition.alias.yaml',
+        'punctuation.definition.anchor.yaml',
+      ],
+      settings: {
+        foreground: syntax.constant,
+      },
+    },
+    {
+      name: 'TOML Section Tables & Keys',
+      scope: [
+        'entity.name.section.toml',
+        'punctuation.definition.table.toml',
+      ],
+      settings: {
+        foreground: syntax.class,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'TOML Keys',
+      scope: [
+        'support.type.property-name.toml',
+        'variable.key.toml',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+      },
+    },
+    {
+      name: 'SQL Keywords & Clauses (SELECT, FROM, WHERE, JOIN)',
+      scope: [
+        'keyword.other.DML.sql',
+        'keyword.other.DDL.sql',
+        'keyword.other.sql',
+        'keyword.other.create.sql',
+        'keyword.other.alias.sql',
+        'keyword.other.order.sql',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'SQL Aggregate & Built-in Functions',
+      scope: [
+        'support.function.aggregate.sql',
+        'support.function.builtin.sql',
+      ],
+      settings: {
+        foreground: syntax.builtin || syntax.func,
+      },
+    },
+    {
+      name: 'Dockerfile Instructions (FROM, RUN, CMD, COPY, WORKDIR)',
+      scope: [
+        'keyword.other.special-method.dockerfile',
+        'entity.name.function.dockerfile',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'GraphQL Types & Operations',
+      scope: [
+        'entity.name.type.graphql',
+        'keyword.operation.graphql',
+      ],
+      settings: {
+        foreground: syntax.type,
+      },
+    },
+    {
+      name: 'GraphQL Fields',
+      scope: [
+        'variable.graphql',
+      ],
+      settings: {
+        foreground: syntax.property,
+      },
+    },
+    {
+      name: 'Terraform & HCL Blocks & Attributes',
+      scope: [
+        'entity.name.section.hcl',
+        'storage.type.hcl',
+      ],
+      settings: {
+        foreground: syntax.keyword,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Terraform Attributes',
+      scope: [
+        'variable.other.member.hcl',
+      ],
+      settings: {
+        foreground: syntax.property,
+      },
+    },
+    {
+      name: 'Prisma Models & Types',
+      scope: [
+        'entity.name.type.class.prisma',
+      ],
+      settings: {
+        foreground: syntax.class,
+        fontStyle: 'bold',
+      },
+    },
+    {
+      name: 'Prisma Field Attributes (@id, @default, @relation)',
+      scope: [
+        'entity.name.attribute.prisma',
+        'punctuation.definition.attribute.prisma',
+      ],
+      settings: {
+        foreground: syntax.decorator || syntax.attribute,
+      },
     },
 
-    // -------------------------------------------------------------
-    // Markdown
-    // -------------------------------------------------------------
+    // =============================================================
+    // 17. Markdown & Rich Text
+    // =============================================================
     {
       name: 'Markdown Headings',
       scope: [
         'markup.heading',
         'punctuation.definition.heading.markdown',
-        'entity.name.section.markdown'
+        'entity.name.section.markdown',
       ],
       settings: {
-        foreground: syntax.keyword,
-        fontStyle: 'bold'
-      }
+        foreground: syntax.heading || syntax.keyword,
+        fontStyle: 'bold',
+      },
     },
     {
-      name: 'Markdown Code & Inline Raw',
+      name: 'Markdown Inline Code & Fenced Code Blocks',
       scope: [
         'markup.inline.raw.markdown',
         'markup.raw.block.markdown',
-        'markup.raw.block.fenced.markdown'
+        'markup.raw.block.fenced.markdown',
       ],
       settings: {
-        foreground: syntax.string
-      }
+        foreground: syntax.string,
+      },
     },
     {
-      name: 'Markdown Links & URLs',
+      name: 'Markdown Links & References',
       scope: [
         'string.other.link.title.markdown',
         'constant.other.reference.link.markdown',
-        'markup.underline.link'
+        'markup.underline.link',
       ],
       settings: {
-        foreground: syntax.func,
-        fontStyle: 'underline'
-      }
+        foreground: syntax.link || syntax.func,
+        fontStyle: 'underline',
+      },
     },
     {
-      name: 'Markdown Emphasis',
+      name: 'Markdown Bold',
       scope: ['markup.bold'],
       settings: {
+        foreground: syntax.number,
         fontStyle: 'bold',
-        foreground: syntax.number
-      }
+      },
     },
     {
       name: 'Markdown Italic',
       scope: ['markup.italic'],
       settings: {
+        foreground: syntax.attribute,
         fontStyle: 'italic',
-        foreground: syntax.attribute
-      }
+      },
     },
     {
       name: 'Markdown Blockquote',
       scope: [
         'markup.quote',
-        'punctuation.definition.blockquote.markdown'
+        'punctuation.definition.blockquote.markdown',
       ],
       settings: {
         foreground: syntax.comment,
-        fontStyle: 'italic'
-      }
-    }
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Markdown List Punctuation',
+      scope: [
+        'punctuation.definition.list.begin.markdown',
+      ],
+      settings: {
+        foreground: syntax.operator,
+      },
+    },
+
+    // =============================================================
+    // 18. Diff / Git Syntax
+    // =============================================================
+    {
+      name: 'Diff Inserted / Added',
+      scope: [
+        'markup.inserted',
+        'punctuation.definition.inserted',
+      ],
+      settings: {
+        foreground: syntax.diffAdded || syntax.string,
+      },
+    },
+    {
+      name: 'Diff Deleted / Removed',
+      scope: [
+        'markup.deleted',
+        'punctuation.definition.deleted',
+      ],
+      settings: {
+        foreground: syntax.diffRemoved || syntax.regex,
+      },
+    },
+    {
+      name: 'Diff Changed / Modified',
+      scope: [
+        'markup.changed',
+        'punctuation.definition.changed',
+      ],
+      settings: {
+        foreground: syntax.diffModified || syntax.func,
+      },
+    },
   ];
 }
 

@@ -1,14 +1,70 @@
-# Dependencies
-node_modules/
+# ==============================================================================
+# Xeoo Theme Suite - .gitignore
+# ==============================================================================
 
-# Package staging (temporary build cache)
+# 1. Credentials, Secrets & Sensitive Files
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*credential*
+*secret*
+*token*
+credentials.json
+client_secret*.json
+auth.json
+.npmrc
+.yarnrc
+.ssh/
+.aws/
+.gnupg/
+
+# 2. Testing & Test Fixtures (do not commit test files)
+# ------------------------------------------------------------------------------
+test/
+tests/
+__tests__/
+*.test.js
+*.spec.js
+.vscode-test/
+coverage/
+.nyc_output/
+
+# 3. Dependencies & Build Staging
+# ------------------------------------------------------------------------------
+node_modules/
 .vsix_stage/
 
-# Testing & Logs
-.vscode-test/
+# 4. Logs & Cache
+# ------------------------------------------------------------------------------
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+.cache/
 
-# Environment & OS files
-.env
+# 5. OS & Editor Metadata
+# ------------------------------------------------------------------------------
 .DS_Store
+.AppleDouble
+.LSOverride
 Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-project
+*.sublime-workspace

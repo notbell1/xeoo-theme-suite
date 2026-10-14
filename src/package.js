@@ -55,7 +55,9 @@ const vsixManifest = `<?xml version="1.0" encoding="utf-8"?>
   <Dependencies/>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/xeoo-icon.png" Addressable="true" />
     <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
   </Assets>
 </PackageManifest>`;
 
@@ -84,7 +86,7 @@ function copyRecursive(src, dest) {
 }
 
 // Files to bundle
-const filesToBundle = ['package.json', 'README.md', 'LICENSE', 'assets', 'themes', 'src'];
+const filesToBundle = ['package.json', 'README.md', 'CHANGELOG.md', 'LICENSE', 'assets', 'themes', 'src', 'syntaxes'];
 filesToBundle.forEach((file) => {
   const src = path.join(ROOT_DIR, file);
   if (fs.existsSync(src)) {

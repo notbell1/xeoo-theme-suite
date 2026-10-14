@@ -2,7 +2,7 @@
   "name": "xeoo-theme",
   "displayName": "Xeoo Theme",
   "description": "A master suite of 43 professionally calibrated Dark, Soft, and Light themes across 15 color categories with an interactive sidebar studio. Designed for zero eye-strain and WCAG-compliant contrast.",
-  "version": "2.0.0",
+  "version": "2.2.2",
   "publisher": "NTTBELL",
   "icon": "assets/xeoo-icon.png",
   "license": "MIT",
@@ -34,7 +34,8 @@
   "scripts": {
     "build": "node src/build.js",
     "watch": "node src/build.js --watch",
-    "package": "node src/package.js"
+    "package": "node src/package.js",
+    "test": "node test/syntax-test.js"
   },
   "contributes": {
     "viewsContainers": {
@@ -54,6 +55,21 @@
         }
       ]
     },
+    "grammars": [
+      {
+        "scopeName": "inline.html.injection",
+        "path": "./syntaxes/inline-html.tmLanguage.json",
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx"
+        ],
+        "embeddedLanguages": {
+          "text.html.basic": "html"
+        }
+      }
+    ],
     "commands": [
       {
         "command": "xeoo-theme.applyTheme",
@@ -71,6 +87,18 @@
         "title": "Surprise Me! (Random Theme)",
         "category": "Xeoo Theme",
         "icon": "$(sparkle)"
+      },
+      {
+        "command": "xeoo-theme.refresh",
+        "title": "Refresh Studio Dashboard",
+        "category": "Xeoo Theme",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "xeoo-theme.showInfo",
+        "title": "Xeoo Studio Details",
+        "category": "Xeoo Theme",
+        "icon": "$(info)"
       }
     ],
     "menus": {
@@ -78,12 +106,17 @@
         {
           "command": "xeoo-theme.quickPick",
           "when": "view == xeoo-theme-switcher",
-          "group": "navigation"
+          "group": "navigation@1"
         },
         {
           "command": "xeoo-theme.randomTheme",
           "when": "view == xeoo-theme-switcher",
-          "group": "navigation"
+          "group": "navigation@2"
+        },
+        {
+          "command": "xeoo-theme.refresh",
+          "when": "view == xeoo-theme-switcher",
+          "group": "navigation@3"
         }
       ]
     },
@@ -307,10 +340,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/notbell1/zx-theme"
+    "url": "https://github.com/notbell1/xeoo-theme-suite"
   },
   "bugs": {
-    "url": "https://github.com/notbell1/zx-theme/issues"
+    "url": "https://github.com/notbell1/xeoo-theme-suite/issues"
   },
-  "homepage": "https://github.com/notbell1/zx-theme"
+  "homepage": "https://github.com/notbell1/xeoo-theme-suite"
 }
