@@ -10,9 +10,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - **Extension Details Branding & Logo Rendering**: Fixed broken logo in VS Code Extension Details page by declaring Default Icon asset in VSIX manifest and pointing README media to canonical raw repository assets.
 - **VSIX Packaging**: Added `CHANGELOG.md` and icon assets to addressable VSIX assets bundle.
 
-### Changed
-- **Full English Documentation**: Completely translated and polished `README.md` into comprehensive, professional English.
-
 ## [2.2.1] - 2026-10-14
 
 ### Changed
